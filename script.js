@@ -1,4 +1,7 @@
 /*
+    1: Back button 
+    2: swip on phones 
+    3: count steps and get what step is active so we can remove the need for numbering things 
 */
 const questMainWrap = document.querySelector(".TMMNicknameGenerator")
 const questAction = questMainWrap.querySelectorAll('[role="questTheAction"]')
@@ -9,7 +12,9 @@ const questDots = document.querySelector('[role="questDotsWrap"]')
 const questGenNickname = document.querySelector('[role="generateNickname"]')
 const questGenNicknameButton = document.querySelector('[role="generateNicknameButton"]')
 const questTheMobResults = document.querySelector('[role="questMobResults"]')
-const questSubInfoButton = document.querySelector('[role="SubInfoButton"]')
+const questTakeQuizAgain = document.querySelector('[role="takeQuizAgain"]')
+const questResultsSubInfo = document.querySelector('[role="ResultsSubInfo"]')
+const questTMMNGFormWrap = document.querySelector('[role="TMMNGFormWrap"]')
 
 
 // Pad Leading Zero
@@ -23,12 +28,12 @@ function padLeadingZeros(num, size) {
 function whatQuestionIsActive() {
     const questTheQuestion = Array.from(questMainWrap.querySelectorAll('[role="questMobQuestion"]'))
 
-    var classes = Array.prototype.map.call(questTheQuestion, function(element) {
+    var classes = Array.prototype.map.call(questTheQuestion, function (element) {
         return element.value;
     });
+    // console.log(classes)
 }
 whatQuestionIsActive()
-
 
 // Add Dots +++
 function buildTheDotsNG() {
@@ -36,16 +41,14 @@ function buildTheDotsNG() {
     var questTheQuestionActive = document.querySelector(".NicknameGeneratorItemActive")
     questTheQuestionActiveGST = questTheQuestionActive.dataset.question
 
-
-
     for (let i = 0; i < questTheQuestionAmount; i++) {
         const makeTMMNGdot = document.createElement('b')
-        hightLightDots =  padLeadingZeros(i + 1, 2)
-        if(questTheQuestionActiveGST > hightLightDots){
+        hightLightDots = padLeadingZeros(i + 1, 2)
+        if (questTheQuestionActiveGST > hightLightDots) {
             makeTMMNGdot.className = "TMMNGdot TMMNGdotDone"
-        }else if(questTheQuestionActiveGST == hightLightDots){
+        } else if (questTheQuestionActiveGST == hightLightDots) {
             makeTMMNGdot.className = "TMMNGdot TMMNGdotActive"
-        }else{
+        } else {
             makeTMMNGdot.className = "TMMNGdot"
         }
         questDots.append(makeTMMNGdot)
@@ -68,13 +71,20 @@ function SHButtonsAndGenerateNickname() {
 SHButtonsAndGenerateNickname()
 
 // Generate Nickname Button
-function genNicknameButton(){
+function genNicknameButton() {
     // Hide all questions 
-        questTheQuestion.forEach((questPanel) => {
+    questTheQuestion.forEach((questPanel) => {
         questPanel.hidden = true
         questPanel.classList.remove("NicknameGeneratorItemActive")
     });
     questTheMobResults.hidden = false
+    questBackBtn.hidden = true
+    questGenNickname.hidden = true
+    questDots.hidden = true
+    questResultsSubInfo.hidden = false
+    TMMNGFooterWrapHide = document.querySelector('[role="TMMNGFooterWrap"]')
+    TMMNGFooterWrapHide.hidden = true
+    TMMNGFooterWrapHide.classList.add("dn")
 }
 
 // When to show and hide the back button
@@ -135,9 +145,15 @@ function previousQuestionHandler(e) {
     buildTheDotsNG()
     SHButtonsAndGenerateNickname()
 }
-/*
- 
-*/
+// Take quiz again button 
+function genTakeQuizAgain() {
+    // questTMMNGFormWrap.reset()
+    location.reload()
+}
+
+// 
 questAction.forEach((button) => {
     button.addEventListener("click", nextQuestionHandler)
 });
+// Start on last step - TEMP 
+// genNicknameButton() 

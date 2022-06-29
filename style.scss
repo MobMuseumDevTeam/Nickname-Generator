@@ -8,13 +8,17 @@ body {
 	background: #000;
 }
 
+.dn {
+	display: none !important;
+}
+
 //
 .TMMNicknameGenerator {
 	max-width: 400px;
 	margin: auto;
 	background: #242424;
 	border-radius: 4px;
-	padding-bottom: 1em;
+	// padding-bottom: 1em;
 
 	img {
 		max-width: 100%;
@@ -80,6 +84,8 @@ body {
 	color: #fff;
 	display: flex;
 	justify-content: space-around;
+	min-height: 2em;
+	align-items: center;
 
 	.TMMNGFooterCenter {
 		width: 50%;
@@ -120,6 +126,7 @@ body {
 			outline-offset: -1px;
 		}
 	}
+
 	.generateNicknameButton {
 		background: #5f0e12;
 		padding: .5em;
@@ -128,14 +135,81 @@ body {
 		border-radius: 4px;
 	}
 }
+
 // 
-.NicknameGeneratorResultsWrap{
-	.NicknameGeneratorResults{
+.NicknameGeneratorResultsWrap {
+	.NicknameGeneratorResults {
 		min-height: 350px;
 		color: #fff;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
+	}
+}
+
+.NicknameGeneratorResults {
+	position: relative;
+	overflow: hidden;
+}
+
+.NNGRBackground {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center bottom;
+		filter: blur(5px) sepia(0.5);
+		transform: scale(1.25);
+	}
+}
+
+.NNGRContentWrap {
+	position: absolute;
+	inset: 1em;
+    display: flex;
+    flex-direction: column;
+	.NNGRContent {
+		height: 100%;
+	}
+
+	.NNGRFooter {
+		display: flex;
+		justify-content: space-between;
+
+		>div {
+			width: 40%;
+
+			img {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+// Sub 
+.questResultsSubInfo {
+	max-width: 400px;
+	margin: auto;
+	color: #fff;
+	text-align: center;
+	margin-top: 2em;
+
+	.questIconList {
+		padding: 1em;
+	}
+
+	.ResultsSubInfoButtons {
+		background-color: #5E0000 !important;
+		display: inline-block;
+		color: #fff;
+		padding: 8px 16px;
+		text-decoration: unset;
 	}
 }
