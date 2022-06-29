@@ -121,4 +121,18 @@ body {
   margin: 4px 0;
   border-radius: 4px;
 }
+
+.NicknameGeneratorResultsWrap .NicknameGeneratorResults {
+  min-height: 350px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*# sourceMappingURL=style.css.map */

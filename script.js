@@ -7,6 +7,10 @@ const questTheQuestionAmount = questTheQuestion.length
 const questBackBtn = document.querySelector('[role="questBackButton"]')
 const questDots = document.querySelector('[role="questDotsWrap"]')
 const questGenNickname = document.querySelector('[role="generateNickname"]')
+const questGenNicknameButton = document.querySelector('[role="generateNicknameButton"]')
+const questTheMobResults = document.querySelector('[role="questMobResults"]')
+const questSubInfoButton = document.querySelector('[role="SubInfoButton"]')
+
 
 // Pad Leading Zero
 function padLeadingZeros(num, size) {
@@ -22,9 +26,6 @@ function whatQuestionIsActive() {
     var classes = Array.prototype.map.call(questTheQuestion, function(element) {
         return element.value;
     });
-
-    console.log(classes)
-
 }
 whatQuestionIsActive()
 
@@ -65,6 +66,16 @@ function SHButtonsAndGenerateNickname() {
     }
 }
 SHButtonsAndGenerateNickname()
+
+// Generate Nickname Button
+function genNicknameButton(){
+    // Hide all questions 
+        questTheQuestion.forEach((questPanel) => {
+        questPanel.hidden = true
+        questPanel.classList.remove("NicknameGeneratorItemActive")
+    });
+    questTheMobResults.hidden = false
+}
 
 // When to show and hide the back button
 function backButtonShowHide() {
