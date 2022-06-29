@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Nickname Generator</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="TMMNicknameGenerator">
+
+        <!-- 	 -->
+        <div class="NicknameGeneratorItem NicknameGeneratorItemActive" data-question="01" role="questMobQuestion">
+            <div class="TMMNGItemTop">
+                <div class="TMMNGItemImg">
+                    <img alt="" src="https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/Q1.jpg">
+                </div>
+                <div class="TMMNGItemHeader">
+                    <h2>
+                        This is question 1
+                    </h2>
+                </div>
+            </div>
+            <div class="TMMNGItemQuizWrap">
+                <div class="TMMNGItemAnswer" data-answer="q01a01">
+                    <input type="radio" name="question1" value="prohibition" id="q01a01" class="js-TMMNGRadion"
+                        role="questTheAction" data-gts="02">
+                    <label for="q01a01">
+                        True 1
+                    </label>
+                </div>
+                <div class="TMMNGItemAnswer" data-answer="q01a02">
+                    <input type="radio" name="question1" value="Modern Era" id="q01a02" class="js-TMMNGRadion"
+                        role="questTheAction" data-gts="02">
+                    <label for="q01a02">
+                        False 1
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <!-- 	 -->
+        <div class="NicknameGeneratorItem " data-question="02" role="questMobQuestion" hidden>
+            <div class="TMMNGItemTop">
+                <div class="TMMNGItemImg">
+                    <img alt="" src="https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/Q2.jpg">
+                </div>
+                <div class="TMMNGItemHeader">
+                    <h2>
+                        This is question 2
+                    </h2>
+                </div>
+            </div>
+            <div class="TMMNGItemQuizWrap">
+                <div class="TMMNGItemAnswer" data-answer="q02a01">
+                    <input type="radio" name="question2" value="prohibition" id="q02a01" class="js-TMMNGRadion"
+                        role="questTheAction" data-gts="03">
+                    <label for="q02a01">
+                        True 2
+                    </label>
+                </div>
+                <div class="TMMNGItemAnswer" data-answer="q02a02">
+                    <input type="radio" name="question2" value="Modern Era" id="q02a02" class="js-TMMNGRadion"
+                        role="questTheAction" data-gts="03">
+                    <label for="q02a02">
+                        False 2
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <!-- 	 -->
+        <div class="NicknameGeneratorItem" data-question="03" role="questMobQuestion" hidden>
+            <div class="TMMNGItemTop">
+                <div class="TMMNGItemImg">
+                    <img alt="" src="https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/Q4.jpg">
+                </div>
+                <div class="TMMNGItemHeader">
+                    <h2>
+                        This is question 3
+                    </h2>
+                </div>
+            </div>
+            <div class="TMMNGItemQuizWrap">
+                <div class="TMMNGItemAnswer" data-answer="q03a01">
+                    <input type="radio" name="question3" value="prohibition" id="q03a01" class="js-TMMNGRadion"
+                        role="questTheAction" data-gts="04">
+                    <label for="q03a01">
+                        True 3
+                    </label>
+                </div>
+                <div class="TMMNGItemAnswer" data-answer="q03a02">
+                    <input type="radio" name="question3" value="Modern Era" id="q03a02" class="js-TMMNGRadion"
+                        role="questTheAction" data-gts="04">
+                    <label for="q03a02">
+                        False 3
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <!-- 	 -->
+        <div class="NicknameGeneratorItem" data-question="04" role="questMobQuestion" hidden>
+            <div class="TMMNGItemTop">
+                <div class="TMMNGItemImg">
+                    <img alt="" src="https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/Q5.jpg">
+                </div>
+                <div class="TMMNGItemHeader">
+                    <h2>
+                        Last Question!!!
+                    </h2>
+                </div>
+            </div>
+            <div class="TMMNGItemQuizWrap">
+                <span style="color: #fff; font-size: 34px; display: block; text-align: center; margin-bottom: 2em;;">
+                    Get The Answer 
+                </span>
+            </div>
+        </div>
+        <!--  -->
+        <div class="TMMNGFooterWrap">
+            <div class="TMMNGFooterSide TMMNGback">
+                <span class="js-TMMNGback" role="questBackButton" data-gts="" onclick="previousQuestionHandler()" hidden>
+                    BACK
+                </span>
+            </div>
+            <div class="TMMNGFooterCenter">
+                <div class="TMMNGdots" role="questDotsWrap" hidden>
+                    <!-- dots added with js -->
+                </div>
+                <div class="TMMNGGenerate" role="generateNickname" hidden>
+                    <span class="generateNicknameButton">
+                        Generate Nickname
+                    </span>
+                </div>
+            </div>
+            <div class="TMMNGFooterSide TMMNGblank">
+                <span>BLANK</span>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        // 
+    </script>
+    <!-- 
+        not today satan
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
+    -->
+</body>
+
+</html>
