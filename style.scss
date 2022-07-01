@@ -12,26 +12,37 @@ body {
 	display: none !important;
 }
 
+// 
+$NGWidth: 500px;
+
+
+// @media (min-width: $NGWidth) {
+  
+// }
 //
 .TMMNicknameGenerator {
-	max-width: 400px;
+	max-width: $NGWidth;
 	margin: auto;
 	background: #242424;
 	border-radius: 4px;
-	// padding-bottom: 1em;
+	overflow: hidden;
 
 	img {
 		max-width: 100%;
-		height: 250px;
-		object-fit: cover;
-		width: 100%;
-		object-position: top center;
 	}
 
 	.TMMNGItemTop {
 
 		//   Image
-		.TMMNGItemImg {}
+		.TMMNGItemImg {
+			img {
+				max-width: 100%;
+				height: 250px;
+				object-fit: cover;
+				width: 100%;
+				object-position: top center;
+			}
+		}
 
 		//   Header
 		.TMMNGItemHeader {
@@ -133,69 +144,13 @@ body {
 		display: inline-block;
 		margin: 4px 0;
 		border-radius: 4px;
-	}
-}
-
-// 
-.NicknameGeneratorResultsWrap {
-	.NicknameGeneratorResults {
-		min-height: 350px;
-		color: #fff;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-	}
-}
-
-.NicknameGeneratorResults {
-	position: relative;
-	overflow: hidden;
-}
-
-.NNGRBackground {
-	position: absolute;
-	inset: 0;
-	z-index: 0;
-
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center bottom;
-		filter: blur(5px) sepia(0.5);
-		transform: scale(1.25);
-	}
-}
-
-.NNGRContentWrap {
-	position: absolute;
-	inset: 1em;
-    display: flex;
-    flex-direction: column;
-	.NNGRContent {
-		height: 100%;
-	}
-
-	.NNGRFooter {
-		display: flex;
-		justify-content: space-between;
-
-		>div {
-			width: 40%;
-
-			img {
-				width: 100%;
-				max-width: 100%;
-				height: auto;
-			}
-		}
+		cursor: pointer;
 	}
 }
 
 // Sub 
 .questResultsSubInfo {
-	max-width: 400px;
+	max-width: $NGWidth * 1.24;
 	margin: auto;
 	color: #fff;
 	text-align: center;
@@ -211,5 +166,150 @@ body {
 		color: #fff;
 		padding: 8px 16px;
 		text-decoration: unset;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+}
+
+/*
+-
+*/
+.NicknameGeneratorResultsWrap {
+	.NicknameGeneratorResults {
+		min-height: 350px;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		padding: 2.5em;
+	}
+}
+
+// 
+.NNGRBackground {
+	position: absolute;
+	inset: 0;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: blur(4px);
+	}
+
+}
+
+.NNGRContentWrap {
+	position: relative;
+
+	.NNGRContent {
+		position: relative;
+		border: 0.75em solid #fff;
+		transform: rotate(3deg);
+	}
+
+	.NNGRUserInfo {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding-bottom: 2em;
+
+		h2,
+		h3 {
+			transform: rotate(-3deg);
+		}
+
+		h3 {
+			background: #fff;
+			color: #000;
+			text-align: right;
+			display: inline-block;
+			width: fit-content;
+			align-self: end;
+			margin-bottom: .5em;
+			max-width: 80%;
+			right: -0.25em;
+			position: relative;
+			padding: .25em .5em .25em .1em;
+			display: flex;
+			align-items: center;
+
+			span {
+				&:first-of-type {
+					color: #af0816;
+					text-transform: uppercase;
+					padding: 0 8px;
+				}
+			}
+		}
+
+		h2 {
+			background: #5d0003;
+			width: fit-content;
+			padding: 4px 8px;
+			left: -1.5em;
+			position: relative;
+			margin-bottom: 1rem;
+		}
+	}
+
+	.NNGRFooter {
+		margin-top: 2em;
+	}
+}
+
+// Text Inputs 
+.TMMNGItemTextAnswerWrap {
+	display: flex;
+	gap: 1em;
+	padding: 0 1em;
+
+	.TMMNGItemTextAnswer {
+		flex: 1;
+
+		input {
+			width: 100%;
+			border: none;
+			background-image: none;
+			background-color: #242424;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+			border: 1px solid #cfcfcf;
+			border-radius: 10px;
+			padding: 13px 8px;
+			color: #fff;
+
+			&:-webkit-autofill,
+			&:-webkit-autofill:hover,
+			&:-webkit-autofill:focus,
+			&:-webkit-autofill:active {
+				-webkit-box-shadow: 0 0 0 30px #242424 inset !important;
+				color: #fff !important;
+			}
+
+			&:-webkit-autofill {
+				-webkit-text-fill-color: #fff !important;
+			}
+		}
+	}
+}
+
+// Bottom two logos 
+.NNGRFooter {
+	display: flex;
+	justify-content: space-between;
+
+	>div {
+		width: 40%;
+
+		img {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
 	}
 }

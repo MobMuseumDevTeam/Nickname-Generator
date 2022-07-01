@@ -24,6 +24,7 @@ function padLeadingZeros(num, size) {
     return s
 }
 // 
+// 
 // Try to count what question has the active class so we can remove the need to numbers in the html
 function whatQuestionIsActive() {
     const questTheQuestion = Array.from(questMainWrap.querySelectorAll('[role="questMobQuestion"]'))

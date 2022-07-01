@@ -13,12 +13,16 @@ body {
 }
 
 .TMMNicknameGenerator {
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
   background: #242424;
   border-radius: 4px;
+  overflow: hidden;
 }
 .TMMNicknameGenerator img {
+  max-width: 100%;
+}
+.TMMNicknameGenerator .TMMNGItemTop .TMMNGItemImg img {
   max-width: 100%;
   height: 250px;
   -o-object-fit: cover;
@@ -103,61 +107,11 @@ body {
   display: inline-block;
   margin: 4px 0;
   border-radius: 4px;
-}
-
-.NicknameGeneratorResultsWrap .NicknameGeneratorResults {
-  min-height: 350px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.NicknameGeneratorResults {
-  position: relative;
-  overflow: hidden;
-}
-
-.NNGRBackground {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.NNGRBackground img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center bottom;
-     object-position: center bottom;
-  filter: blur(5px) sepia(0.5);
-  transform: scale(1.25);
-}
-
-.NNGRContentWrap {
-  position: absolute;
-  inset: 1em;
-  display: flex;
-  flex-direction: column;
-}
-.NNGRContentWrap .NNGRContent {
-  height: 100%;
-}
-.NNGRContentWrap .NNGRFooter {
-  display: flex;
-  justify-content: space-between;
-}
-.NNGRContentWrap .NNGRFooter > div {
-  width: 40%;
-}
-.NNGRContentWrap .NNGRFooter > div img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+  cursor: pointer;
 }
 
 .questResultsSubInfo {
-  max-width: 400px;
+  max-width: 620px;
   margin: auto;
   color: #fff;
   text-align: center;
@@ -172,4 +126,127 @@ body {
   color: #fff;
   padding: 8px 16px;
   text-decoration: unset;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/*
+-
+*/
+.NicknameGeneratorResultsWrap .NicknameGeneratorResults {
+  min-height: 350px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2.5em;
+}
+
+.NNGRBackground {
+  position: absolute;
+  inset: 0;
+}
+.NNGRBackground img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: blur(4px);
+}
+
+.NNGRContentWrap {
+  position: relative;
+}
+.NNGRContentWrap .NNGRContent {
+  position: relative;
+  border: 0.75em solid #fff;
+  transform: rotate(3deg);
+}
+.NNGRContentWrap .NNGRUserInfo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2em;
+}
+.NNGRContentWrap .NNGRUserInfo h2,
+.NNGRContentWrap .NNGRUserInfo h3 {
+  transform: rotate(-3deg);
+}
+.NNGRContentWrap .NNGRUserInfo h3 {
+  background: #fff;
+  color: #000;
+  text-align: right;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: end;
+  margin-bottom: 0.5em;
+  max-width: 80%;
+  right: -0.25em;
+  position: relative;
+  padding: 0.25em 0.5em 0.25em 0.1em;
+  display: flex;
+  align-items: center;
+}
+.NNGRContentWrap .NNGRUserInfo h3 span:first-of-type {
+  color: #af0816;
+  text-transform: uppercase;
+  padding: 0 8px;
+}
+.NNGRContentWrap .NNGRUserInfo h2 {
+  background: #5d0003;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4px 8px;
+  left: -1.5em;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.NNGRContentWrap .NNGRFooter {
+  margin-top: 2em;
+}
+
+.TMMNGItemTextAnswerWrap {
+  display: flex;
+  gap: 1em;
+  padding: 0 1em;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer {
+  flex: 1;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input {
+  width: 100%;
+  border: none;
+  background-image: none;
+  background-color: #242424;
+  box-shadow: none;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  padding: 13px 8px;
+  color: #fff;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill, .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill:hover, .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill:focus, .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #242424 inset !important;
+  color: #fff !important;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+}
+
+.NNGRFooter {
+  display: flex;
+  justify-content: space-between;
+}
+.NNGRFooter > div {
+  width: 40%;
+}
+.NNGRFooter > div img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */
