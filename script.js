@@ -83,6 +83,7 @@ function genNicknameButton() {
     questGenNickname.hidden = true
     questDots.hidden = true
     questResultsSubInfo.hidden = false
+    questTheMobResults.classList.add("NicknameGeneratorItemActive")
     TMMNGFooterWrapHide = document.querySelector('[role="TMMNGFooterWrap"]')
     TMMNGFooterWrapHide.hidden = true
     TMMNGFooterWrapHide.classList.add("dn")
