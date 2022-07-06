@@ -87,6 +87,7 @@ function genNicknameButton() {
     TMMNGFooterWrapHide = document.querySelector('[role="TMMNGFooterWrap"]')
     TMMNGFooterWrapHide.hidden = true
     TMMNGFooterWrapHide.classList.add("dn")
+    questMainWrap.classList.add("TMMNicknameGeneratorDone")
 }
 
 // When to show and hide the back button

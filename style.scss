@@ -1,3 +1,6 @@
+// 
+$NGWidth: 500px;
+
 * {
 	padding: 0;
 	margin: 0;
@@ -12,8 +15,13 @@ body {
 	display: none !important;
 }
 
-// 
-$NGWidth: 500px;
+.wrap {
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+	padding: 2em;
+}
+
 
 
 @media (min-width: $NGWidth) {
@@ -24,12 +32,16 @@ $NGWidth: 500px;
 
 //
 .TMMNicknameGenerator {
-	max-width: $NGWidth;
+	// max-width: $NGWidth;
 	margin: auto;
 	background: #242424;
 	border-radius: 4px;
 	overflow: hidden;
 	position: relative;
+
+	&.TMMNicknameGeneratorDone {
+		max-width: 530px;
+	}
 
 	img {
 		max-width: 100%;
@@ -37,7 +49,9 @@ $NGWidth: 500px;
 	}
 
 
-	.TMMNGItemTop {}
+	.TMMNGItemTop {
+		position: relative;
+	}
 
 	//   Image
 	.TMMNGItemImg {
@@ -49,6 +63,28 @@ $NGWidth: 500px;
 			object-fit: cover;
 			width: 100%;
 			object-position: top center;
+		}
+
+		&:after {
+			content: " ";
+			position: absolute;
+			inset: 0;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			background-size: 100% 100%;
+			background-image: url(https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png);
+
+			@media (min-width: $NGWidth) {
+				background-image: url(https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_verticalSide.png);
+			}
+		}
+	}
+	.NicknameGeneratorItemStack {
+		.TMMNGItemImg {
+			&:after {
+				background-image: url(https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png);
+			}
 		}
 	}
 
@@ -324,7 +360,8 @@ $NGWidth: 500px;
 // 
 @media (min-width: $NGWidth) {
 	.TMMNicknameGenerator {
-		max-width: 800px;
+		// max-width: 800px;
+		width: 100%;
 
 		.NicknameGeneratorItem {
 			display: none;
@@ -332,6 +369,29 @@ $NGWidth: 500px;
 			&.NicknameGeneratorItemActive {
 				display: flex;
 				flex-direction: row-reverse;
+			}
+
+			&.NicknameGeneratorItemWide {
+				.TMMNGItemTop {
+					width: 40%;
+				}
+
+				.TMMNGItemQuizWrap {
+					width: 60%;
+				}
+			}
+
+			&.NicknameGeneratorItemStack.NicknameGeneratorItemActive {
+				display: block !important;
+				padding-bottom: 4em;
+
+				.TMMNGItemTop {
+					width: 100%;
+				}
+
+				.TMMNGItemQuizWrap {
+					width: 100%;
+				}
 			}
 		}
 
