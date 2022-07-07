@@ -16,25 +16,12 @@ const questTakeQuizAgain = document.querySelector('[role="takeQuizAgain"]')
 const questResultsSubInfo = document.querySelector('[role="ResultsSubInfo"]')
 const questTMMNGFormWrap = document.querySelector('[role="TMMNGFormWrap"]')
 
-
 // Pad Leading Zero
 function padLeadingZeros(num, size) {
     var s = num + ""
     while (s.length < size) s = "0" + s
     return s
 }
-// 
-// 
-// Try to count what question has the active class so we can remove the need to numbers in the html
-function whatQuestionIsActive() {
-    const questTheQuestion = Array.from(questMainWrap.querySelectorAll('[role="questMobQuestion"]'))
-
-    var classes = Array.prototype.map.call(questTheQuestion, function (element) {
-        return element.value;
-    });
-    // console.log(classes)
-}
-whatQuestionIsActive()
 
 // Add Dots +++
 function buildTheDotsNG() {
@@ -159,4 +146,4 @@ questAction.forEach((button) => {
     button.addEventListener("click", nextQuestionHandler)
 });
 // Start on last step - TEMP 
-// genNicknameButton() 
+genNicknameButton() 

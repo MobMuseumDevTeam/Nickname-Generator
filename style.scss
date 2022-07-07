@@ -22,6 +22,19 @@ body {
 	padding: 2em;
 }
 
+// Variables 
+$NickGenColDark: #242424;
+$NickGenColMedium: #afafaf;
+$NickGenColLight: #ffffff;
+$NickGenColRed: #850c0f;
+
+
+ 
+$NickGenBaseSize: 16px;
+
+$NickGenOverlayImg1: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png";
+$NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_verticalSide.png";
+
 
 
 @media (min-width: $NGWidth) {
@@ -32,10 +45,22 @@ body {
 
 //
 .TMMNicknameGenerator {
-	// max-width: $NGWidth;
+	// PreLoad Images 
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		z-index: -1;  
+		content: url($NickGenOverlayImg1) url($NickGenOverlayImg2) ; 
+	}
+
+	font-size: $NickGenBaseSize;
 	margin: auto;
-	background: #242424;
-	border-radius: 4px;
+	background: $NickGenColDark;
+	border-radius: $NickGenBaseSize / 2;
 	overflow: hidden;
 	position: relative;
 
@@ -48,8 +73,7 @@ body {
 
 	}
 
-
-	.TMMNGItemTop {
+	.TMMNGItemImgWrap {
 		position: relative;
 	}
 
@@ -68,38 +92,37 @@ body {
 		&:after {
 			content: " ";
 			position: absolute;
-			inset: 0;
+			inset: -2px;
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
 			background-size: 100% 100%;
-			background-image: url(https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png);
+			background-image: url($NickGenOverlayImg1);
 
 			@media (min-width: $NGWidth) {
-				background-image: url(https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_verticalSide.png);
+				background-image: url($NickGenOverlayImg2);
 			}
 		}
 	}
+
 	.NicknameGeneratorItemStack {
 		.TMMNGItemImg {
 			&:after {
-				background-image: url(https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png);
+				background-image: url($NickGenOverlayImg1);
 			}
 		}
 	}
 
 	//   Header
 	.TMMNGItemHeader {
-		color: #fff;
-		font-size: 1.4em;
+		color: $NickGenColLight;
+		font-size: 1.4rem;
 		font-weight: 900;
 		padding: 0.5em;
 		text-align: center;
 	}
 
 	//   Answers Wrap
-	.TMMNGItemQuizWrap {}
-
 	.TMMNGItemAnswer {
 		display: flex;
 
@@ -107,26 +130,26 @@ body {
 			display: none;
 
 			+label {
-				color: #fff;
+				color: $NickGenColLight;
 				text-align: center;
 				display: block;
 				width: calc(100% - 4em);
 				max-width: 100%;
-				border: 1px solid #afafaf;
+				border: 1px solid $NickGenColMedium;
 				padding: 1em;
 				margin: 0 auto 1em;
 				cursor: pointer;
 				border-radius: 8px;
 
 				&:hover {
-					background-color: darken(#850c0f, 20%);
+					background-color: darken($NickGenColRed, 20%);
 				}
 			}
 
 			// Checked
 			&:checked {
 				+label {
-					background-color: #850c0f;
+					background-color: $NickGenColRed;
 				}
 			}
 		}
@@ -135,7 +158,7 @@ body {
 
 // Footer Wrap
 .TMMNGFooterWrap {
-	color: #fff;
+	color: $NickGenColLight;
 	display: flex;
 	justify-content: space-around;
 	min-height: 2em;
@@ -152,11 +175,9 @@ body {
 	}
 
 	.TMMNGblank {
-		* {
-			display: none;
-		}
+		opacity: 0;
 	}
-
+	// The Dots
 	.TMMNGdots {
 		font-size: 0;
 
@@ -164,25 +185,23 @@ body {
 			display: inline-block;
 			width: 6px;
 			height: 6px;
-			background: #fff;
+			background: $NickGenColLight;
 			border-radius: 100%;
 			margin: 0 3px;
 		}
-
-		.TMMNGdotDone {
-			background: #5f0e12 !important;
-		}
-
 		.TMMNGdotActive {
 			transform: scale(1.5);
-			background: #5f0e12 !important;
-			outline: 1px solid #5f0e12;
+			background: $NickGenColRed !important;
+			outline: 1px solid $NickGenColRed;
 			outline-offset: -1px;
 		}
+		.TMMNGdotDone {
+			background: $NickGenColRed !important;
+		}
 	}
-
+	// Generate Button
 	.generateNicknameButton {
-		background: #5f0e12;
+		background: $NickGenColRed;
 		padding: .5em;
 		display: inline-block;
 		margin: 4px 0;
@@ -191,11 +210,11 @@ body {
 	}
 }
 
-// Sub 
+// Sub Information 
 .questResultsSubInfo {
 	max-width: $NGWidth * 1.24;
 	margin: auto;
-	color: #fff;
+	color: $NickGenColLight;
 	text-align: center;
 	margin-top: 2em;
 
@@ -204,9 +223,9 @@ body {
 	}
 
 	.ResultsSubInfoButtons {
-		background-color: #5E0000 !important;
+		background-color: $NickGenColRed !important;
 		display: inline-block;
-		color: #fff;
+		color: $NickGenColLight;
 		padding: 8px 16px;
 		text-decoration: unset;
 		cursor: pointer;
@@ -220,7 +239,7 @@ body {
 .NicknameGeneratorResultsWrap {
 	.NicknameGeneratorResults {
 		min-height: 350px;
-		color: #fff;
+		color: $NickGenColLight;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -248,7 +267,7 @@ body {
 
 	.NNGRContent {
 		position: relative;
-		border: 0.75em solid #fff;
+		border: 0.75em solid $NickGenColLight;
 		transform: rotate(3deg);
 	}
 
@@ -266,7 +285,7 @@ body {
 		}
 
 		h3 {
-			background: #fff;
+			background: $NickGenColLight;
 			color: #000;
 			text-align: right;
 			display: inline-block;
@@ -282,7 +301,7 @@ body {
 
 			span {
 				&:first-of-type {
-					color: #af0816;
+					color: $NickGenColRed;
 					text-transform: uppercase;
 					padding: 0 8px;
 				}
@@ -290,7 +309,7 @@ body {
 		}
 
 		h2 {
-			background: #5d0003;
+			background: $NickGenColRed;
 			width: fit-content;
 			padding: 4px 8px;
 			left: -1.5em;
@@ -324,7 +343,7 @@ body {
 			border: 1px solid #cfcfcf;
 			border-radius: 10px;
 			padding: 13px 8px;
-			color: #fff;
+			color: $NickGenColLight;
 
 			&:-webkit-autofill,
 			&:-webkit-autofill:hover,
@@ -360,7 +379,6 @@ body {
 // 
 @media (min-width: $NGWidth) {
 	.TMMNicknameGenerator {
-		// max-width: 800px;
 		width: 100%;
 
 		.NicknameGeneratorItem {
@@ -372,7 +390,7 @@ body {
 			}
 
 			&.NicknameGeneratorItemWide {
-				.TMMNGItemTop {
+				.TMMNGItemImgWrap {
 					width: 40%;
 				}
 
@@ -385,7 +403,7 @@ body {
 				display: block !important;
 				padding-bottom: 4em;
 
-				.TMMNGItemTop {
+				.TMMNGItemImgWrap {
 					width: 100%;
 				}
 
@@ -395,7 +413,7 @@ body {
 			}
 		}
 
-		.TMMNGItemTop {
+		.TMMNGItemImgWrap {
 			width: 60%;
 
 			.TMMNGItemImg img {
@@ -432,8 +450,5 @@ body {
 				padding-left: 2em;
 			}
 		}
-
-
 	}
-
 }
