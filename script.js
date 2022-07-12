@@ -146,4 +146,4 @@ questAction.forEach((button) => {
     button.addEventListener("click", nextQuestionHandler)
 });
 // Start on last step - TEMP 
-genNicknameButton() 
+// genNicknameButton() 

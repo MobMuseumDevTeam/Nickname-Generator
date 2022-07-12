@@ -1,4 +1,9 @@
-// 
+/*
+NicknameGeneratorItem 
+NicknameGeneratorItemActive
+NicknameGeneratorItemWide
+NicknameGeneratorItemStack
+*/ 
 $NGWidth: 500px;
 
 * {
@@ -80,12 +85,16 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	//   Image
 	.TMMNGItemImg {
 		font-size: 0;
+		position: relative;
+		height: 100%;
 
 		img {
 			max-width: 100%;
-			height: 250px;
+			min-height: 250px;
+
 			object-fit: cover;
 			width: 100%;
+			height: 100%;
 			object-position: top center;
 		}
 
@@ -180,6 +189,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	// The Dots
 	.TMMNGdots {
 		font-size: 0;
+	
 
 		.TMMNGdot {
 			display: inline-block;
@@ -417,7 +427,8 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			width: 60%;
 
 			.TMMNGItemImg img {
-				height: 450px;
+				min-height: 450px;
+				height: 100%;
 			}
 		}
 
