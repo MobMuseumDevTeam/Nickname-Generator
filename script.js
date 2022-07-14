@@ -58,6 +58,42 @@ function SHButtonsAndGenerateNickname() {
 }
 SHButtonsAndGenerateNickname()
 
+// 
+function genNicknameAnswers(p1, p2) {
+    // return p1 * p2;   // The function returns the product of p1 and p2
+    // const radioButtons = document.querySelectorAll('input[name="size"]');
+
+    const radioButtons = document.querySelectorAll(p1)
+
+    let selectedValue;
+    for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
+            selectedValue = radioButton.value;
+            selectedID = radioButton.id;
+            break;
+        }
+    }
+
+
+    console.log(selectedValue)
+    console.log(selectedID)
+    console.log("-----------------------")
+  }
+//   genNicknameAnswers('input[name="question1"]') 
+
+function genNicknameOnSubmit() {
+    genNicknameAnswers('input[name="question1"]') 
+    genNicknameAnswers('input[name="question3"]') 
+    genNicknameAnswers('input[name="question5"]') 
+
+    const inputfirstName = document.querySelector('[name="firstName"]').value
+    const inputlastName = document.querySelector('[name="lastName"]').value
+
+    console.log(inputfirstName)
+    console.log(inputlastName)
+
+}
+
 // Generate Nickname Button
 function genNicknameButton() {
     // Hide all questions 
@@ -75,6 +111,24 @@ function genNicknameButton() {
     TMMNGFooterWrapHide.hidden = true
     TMMNGFooterWrapHide.classList.add("dn")
     questMainWrap.classList.add("TMMNicknameGeneratorDone")
+
+    genNicknameOnSubmit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 // When to show and hide the back button
@@ -109,6 +163,7 @@ function nextQuestionHandler(e) {
     backButtonShowHide()
     buildTheDotsNG()
     SHButtonsAndGenerateNickname()
+   
 }
 // 
 function previousQuestionHandler(e) {

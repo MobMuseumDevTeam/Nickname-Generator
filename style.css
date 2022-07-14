@@ -12,6 +12,13 @@ NicknameGeneratorItemStack
 
 body {
   background: #000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ronnia, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .dn {
@@ -20,7 +27,7 @@ body {
 
 .wrap {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   padding: 2em;
 }
@@ -32,6 +39,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
+  min-height: 75vh;
 }
 .TMMNicknameGenerator:after {
   position: absolute;
@@ -77,10 +85,14 @@ body {
   background-size: 100% 100%;
   background-image: url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png");
 }
-@media (min-width: 500px) {
+@media (min-width: 1024px) {
   .TMMNicknameGenerator .TMMNGItemImg:after {
     background-image: url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_verticalSide.png");
   }
+}
+.TMMNicknameGenerator .NicknameGeneratorItem {
+  height: 100% !important;
+  min-height: 75vh;
 }
 .TMMNicknameGenerator .NicknameGeneratorItemStack .TMMNGItemImg:after {
   background-image: url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png");
@@ -92,6 +104,10 @@ body {
   padding: 0.5em;
   text-align: center;
 }
+.TMMNicknameGenerator .TMMNGItemHeader h2 {
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
 .TMMNicknameGenerator .TMMNGItemAnswer {
   display: flex;
 }
@@ -100,12 +116,13 @@ body {
 }
 .TMMNicknameGenerator .TMMNGItemAnswer [type=radio] + label {
   color: #ffffff;
+  font-size: 1.2em;
   text-align: center;
   display: block;
   width: calc(100% - 4em);
   max-width: 100%;
   border: 1px solid #afafaf;
-  padding: 1em;
+  padding: 0.5em 1em;
   margin: 0 auto 1em;
   cursor: pointer;
   border-radius: 8px;
@@ -165,7 +182,7 @@ body {
 }
 
 .questResultsSubInfo {
-  max-width: 620px;
+  max-width: 1269.76px;
   margin: auto;
   color: #ffffff;
   text-align: center;
@@ -305,7 +322,7 @@ body {
   height: auto;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 1024px) {
   .TMMNicknameGenerator {
     width: 100%;
   }
@@ -332,15 +349,20 @@ body {
   .TMMNicknameGenerator .NicknameGeneratorItem.NicknameGeneratorItemStack.NicknameGeneratorItemActive .TMMNGItemQuizWrap {
     width: 100%;
   }
+  .TMMNicknameGenerator .NicknameGeneratorItem.NicknameGeneratorItemStack .TMMNGItemImg img {
+    max-height: 42.8571428571vh;
+    -o-object-position: center;
+       object-position: center;
+  }
   .TMMNicknameGenerator .TMMNGItemImgWrap {
-    width: 60%;
+    width: 50%;
   }
   .TMMNicknameGenerator .TMMNGItemImgWrap .TMMNGItemImg img {
     min-height: 450px;
     height: 100%;
   }
   .TMMNicknameGenerator .TMMNGItemQuizWrap {
-    width: 40%;
+    width: 50%;
   }
   .TMMNicknameGenerator .TMMNGItemHeader {
     text-align: left;

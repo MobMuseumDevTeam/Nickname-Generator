@@ -3,8 +3,8 @@ NicknameGeneratorItem
 NicknameGeneratorItemActive
 NicknameGeneratorItemWide
 NicknameGeneratorItemStack
-*/ 
-$NGWidth: 500px;
+*/
+$NGWidth: 1024px;
 
 * {
 	padding: 0;
@@ -14,6 +14,13 @@ $NGWidth: 500px;
 
 body {
 	background: #000;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: ronnia, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .dn {
@@ -22,7 +29,7 @@ body {
 
 .wrap {
 	width: 100%;
-	max-width: 800px;
+	max-width: 1200px;
 	margin: auto;
 	padding: 2em;
 }
@@ -34,7 +41,7 @@ $NickGenColLight: #ffffff;
 $NickGenColRed: #850c0f;
 
 
- 
+
 $NickGenBaseSize: 16px;
 
 $NickGenOverlayImg1: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png";
@@ -50,6 +57,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 //
 .TMMNicknameGenerator {
+
 	// PreLoad Images 
 	&:after {
 		position: absolute;
@@ -58,8 +66,8 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		width: 0;
 		height: 0;
 		overflow: hidden;
-		z-index: -1;  
-		content: url($NickGenOverlayImg1) url($NickGenOverlayImg2) ; 
+		z-index: -1;
+		content: url($NickGenOverlayImg1) url($NickGenOverlayImg2);
 	}
 
 	font-size: $NickGenBaseSize;
@@ -68,6 +76,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	border-radius: $NickGenBaseSize / 2;
 	overflow: hidden;
 	position: relative;
+	min-height: 75vh;
 
 	&.TMMNicknameGeneratorDone {
 		max-width: 530px;
@@ -114,6 +123,11 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		}
 	}
 
+	.NicknameGeneratorItem {
+		height: 100% !important;
+		min-height: 75vh;
+	}
+
 	.NicknameGeneratorItemStack {
 		.TMMNGItemImg {
 			&:after {
@@ -129,6 +143,12 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		font-weight: 900;
 		padding: 0.5em;
 		text-align: center;
+
+		h2{
+			text-transform: uppercase;
+			margin-top: 2rem;
+		}
+	 
 	}
 
 	//   Answers Wrap
@@ -140,12 +160,13 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 			+label {
 				color: $NickGenColLight;
+				font-size: 1.2em;
 				text-align: center;
 				display: block;
 				width: calc(100% - 4em);
 				max-width: 100%;
 				border: 1px solid $NickGenColMedium;
-				padding: 1em;
+				padding: .5em 1em;
 				margin: 0 auto 1em;
 				cursor: pointer;
 				border-radius: 8px;
@@ -186,10 +207,11 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	.TMMNGblank {
 		opacity: 0;
 	}
+
 	// The Dots
 	.TMMNGdots {
 		font-size: 0;
-	
+
 
 		.TMMNGdot {
 			display: inline-block;
@@ -199,16 +221,19 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			border-radius: 100%;
 			margin: 0 3px;
 		}
+
 		.TMMNGdotActive {
 			transform: scale(1.5);
-			background: $NickGenColRed !important;
+			background: $NickGenColRed  !important;
 			outline: 1px solid $NickGenColRed;
 			outline-offset: -1px;
 		}
+
 		.TMMNGdotDone {
-			background: $NickGenColRed !important;
+			background: $NickGenColRed  !important;
 		}
 	}
+
 	// Generate Button
 	.generateNicknameButton {
 		background: $NickGenColRed;
@@ -233,7 +258,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	}
 
 	.ResultsSubInfoButtons {
-		background-color: $NickGenColRed !important;
+		background-color: $NickGenColRed  !important;
 		display: inline-block;
 		color: $NickGenColLight;
 		padding: 8px 16px;
@@ -409,22 +434,30 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				}
 			}
 
-			&.NicknameGeneratorItemStack.NicknameGeneratorItemActive {
-				display: block !important;
-				padding-bottom: 4em;
+			&.NicknameGeneratorItemStack {
+				&.NicknameGeneratorItemActive {
+					display: block !important;
+					padding-bottom: 4em;
 
-				.TMMNGItemImgWrap {
-					width: 100%;
+					.TMMNGItemImgWrap {
+						width: 100%;
+					}
+
+					.TMMNGItemQuizWrap {
+						width: 100%;
+					}
 				}
 
-				.TMMNGItemQuizWrap {
-					width: 100%;
+				.TMMNGItemImg img {
+					max-height: calc(75vh / 1.75);
+					object-position: center;
 				}
+
 			}
 		}
 
 		.TMMNGItemImgWrap {
-			width: 60%;
+			width: 50%;
 
 			.TMMNGItemImg img {
 				min-height: 450px;
@@ -433,7 +466,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		}
 
 		.TMMNGItemQuizWrap {
-			width: 40%;
+			width: 50%;
 		}
 
 		// 

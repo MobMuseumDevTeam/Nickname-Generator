@@ -1,0 +1,39 @@
+Ronnia Regular
+    font-family: ronnia, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+Ronnia Italic
+    font-family: ronnia, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+
+Ronnia Bold
+    font-family: ronnia, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+Ronnia Bold Italic
+    font-family: ronnia, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+
+Ronnia Condensed Regular
+    font-family: ronnia-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+Ronnia Condensed Bold
+    font-family: ronnia-condensed, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+Ronnia Condensed Bold Italic
+    font-family: ronnia-condensed, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+
+Ronnia Condensed Italic
+    font-family: ronnia-condensed, sans-serif;
+    font-weight: 400;
+    font-style: italic;
