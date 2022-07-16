@@ -350,6 +350,17 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			left: -1.5em;
 			position: relative;
 			margin-bottom: 1rem;
+
+			.mobName:before {
+				content: " \"";
+				letter-spacing: 0px;
+			}
+			
+			.mobName:after {
+				content: "\" ";
+				letter-spacing: 0px;
+			}
+			 
 		}
 	}
 

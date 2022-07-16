@@ -278,6 +278,14 @@ body {
   position: relative;
   margin-bottom: 1rem;
 }
+.NNGRContentWrap .NNGRUserInfo h2 .mobName:before {
+  content: ' "';
+  letter-spacing: 0px;
+}
+.NNGRContentWrap .NNGRUserInfo h2 .mobName:after {
+  content: '" ';
+  letter-spacing: 0px;
+}
 .NNGRContentWrap .NNGRFooter {
   margin-top: 2em;
 }

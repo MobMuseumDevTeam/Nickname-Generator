@@ -15,6 +15,8 @@ const questTheMobResults = document.querySelector('[role="questMobResults"]')
 const questTakeQuizAgain = document.querySelector('[role="takeQuizAgain"]')
 const questResultsSubInfo = document.querySelector('[role="ResultsSubInfo"]')
 const questTMMNGFormWrap = document.querySelector('[role="TMMNGFormWrap"]')
+const fillfirstName = document.querySelector('[data-fill="firstName"]')
+const filllastName = document.querySelector('[data-fill="lastName"]')
 
 // Pad Leading Zero
 function padLeadingZeros(num, size) {
@@ -58,41 +60,62 @@ function SHButtonsAndGenerateNickname() {
 }
 SHButtonsAndGenerateNickname()
 
-// 
-function genNicknameAnswers(p1, p2) {
-    // return p1 * p2;   // The function returns the product of p1 and p2
-    // const radioButtons = document.querySelectorAll('input[name="size"]');
 
-    const radioButtons = document.querySelectorAll(p1)
+// 
+function genNicknameAnswers(ngRadioInputAnswer, p2) {
+     const radioButtons = document.querySelectorAll(ngRadioInputAnswer)
 
     let selectedValue;
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
-            selectedValue = radioButton.value;
-            selectedID = radioButton.id;
+            selectedValue = radioButton.value
+            selectedID = radioButton.id
+            // 
+            window [p2+'selectedValue'] = selectedID
+
             break;
         }
     }
-
 
     console.log(selectedValue)
     console.log(selectedID)
     console.log("-----------------------")
   }
-//   genNicknameAnswers('input[name="question1"]') 
-
+// 
 function genNicknameOnSubmit() {
-    genNicknameAnswers('input[name="question1"]') 
-    genNicknameAnswers('input[name="question3"]') 
-    genNicknameAnswers('input[name="question5"]') 
+    genNicknameAnswers('input[name="question1"]','question1') 
+    console.log("question1selectedValue = " + question1selectedValue)
+    genNicknameAnswers('input[name="question3"]', 'question3') 
+    console.log("question3selectedValue = " + question3selectedValue)
+    genNicknameAnswers('input[name="question5"]', 'question5') 
+    console.log("question5selectedValue = " + question5selectedValue)
 
-    const inputfirstName = document.querySelector('[name="firstName"]').value
-    const inputlastName = document.querySelector('[name="lastName"]').value
+    // fill first name 
+    const inputfirstName = document.querySelector('input[name="firstName"]').value
+    fillfirstName.innerHTML = inputfirstName
 
-    console.log(inputfirstName)
-    console.log(inputlastName)
+    // fill last name 
+    const inputlastName = document.querySelector('input[name="lastName"]').value
+    filllastName.innerHTML = inputlastName
+}
+
+function genNicknameAfterSubmit() {
+    // Questions that matter 
+    // question1selectedValue
+    // question3selectedValue
+    // question5selectedValue
+
+
+
+
+
+
 
 }
+
+
+
+
 
 // Generate Nickname Button
 function genNicknameButton() {
@@ -113,22 +136,6 @@ function genNicknameButton() {
     questMainWrap.classList.add("TMMNicknameGeneratorDone")
 
     genNicknameOnSubmit()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 // When to show and hide the back button
