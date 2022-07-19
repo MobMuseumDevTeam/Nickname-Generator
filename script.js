@@ -60,50 +60,67 @@ function SHButtonsAndGenerateNickname() {
 }
 SHButtonsAndGenerateNickname()
 
+function genNicknameGenerateVariables() {
+    genNicknameAnswers('input[name="question1"]','question1') 
+    console.log("Q1 ID = " + question1selectedTheID)
+    genNicknameAnswers('input[name="question1"]','question1') 
+    console.log("Q1 Value = " + question1selectedValue)
+    // 
+    // 
+    genNicknameAnswers('input[name="question3"]','question3') 
+    console.log("Q3 ID = " + question3selectedTheID)
+    genNicknameAnswers('input[name="question3"]','question3') 
+    console.log("Q3 Value = " + question3selectedValue)
+    // 
+    // 
+    genNicknameAnswers('input[name="question5"]','question5') 
+    console.log("Q5 ID = " + question5selectedTheID)
+    genNicknameAnswers('input[name="question5"]','question5') 
+    console.log("Q5 Value = " + question5selectedValue)
 
+
+}
 // 
 function genNicknameAnswers(ngRadioInputAnswer, p2) {
      const radioButtons = document.querySelectorAll(ngRadioInputAnswer)
 
-    let selectedValue;
+    let selectedTheID;
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
             selectedValue = radioButton.value
             selectedID = radioButton.id
             // 
-            window [p2+'selectedValue'] = selectedID
+            window [p2+'selectedTheID'] = selectedID
+            window [p2+'selectedValue'] = selectedValue
+          
 
             break;
         }
     }
 
-    console.log(selectedValue)
-    console.log(selectedID)
-    console.log("-----------------------")
+    // console.log(selectedTheID)
+    // console.log(selectedID)
+    // console.log("-----------------------")
   }
 // 
 function genNicknameOnSubmit() {
-    genNicknameAnswers('input[name="question1"]','question1') 
-    console.log("question1selectedValue = " + question1selectedValue)
-    genNicknameAnswers('input[name="question3"]', 'question3') 
-    console.log("question3selectedValue = " + question3selectedValue)
-    genNicknameAnswers('input[name="question5"]', 'question5') 
-    console.log("question5selectedValue = " + question5selectedValue)
+    // Set vars 
+    genNicknameGenerateVariables() 
+    const inputfirstName = document.querySelector('input[name="firstName"]').value
+    const inputlastName = document.querySelector('input[name="lastName"]').value
+
 
     // fill first name 
-    const inputfirstName = document.querySelector('input[name="firstName"]').value
     fillfirstName.innerHTML = inputfirstName
-
     // fill last name 
-    const inputlastName = document.querySelector('input[name="lastName"]').value
     filllastName.innerHTML = inputlastName
 }
 
 function genNicknameAfterSubmit() {
     // Questions that matter 
-    // question1selectedValue
-    // question3selectedValue
-    // question5selectedValue
+    // question1selectedTheID
+    // question3selectedTheID
+    // question5selectedTheID
 
 
 
