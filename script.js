@@ -24,6 +24,51 @@ function padLeadingZeros(num, size) {
     while (s.length < size) s = "0" + s
     return s
 }
+// 
+const allTheNicknames = [
+    ["The Shiv", "all", "mob"],
+    ["Trigger", "all", "mob"],
+    ["Big Tuna", "male", "mob"],
+    ["Egg Man", "male", "mob"],
+    ["Grim Reaper", "male", "mob"],
+    ["Iceman", "male", "mob"],
+    ["Mad Dog", "male", "mob"],
+    ["Scotty", "male", "mob"],
+    ["Shorty", "male", "mob"],
+    ["The Barber", "male", "mob"],
+    ["The Enforcer", "male", "mob"],
+    ["The Kid", "male", "mob"],
+    ["The Muscle", "male", "mob"],
+    ["Triggerman", "male", "mob"],
+    ["Copper", "all", "law"],
+    ["Eagle Eye", "all", "law"],
+    ["Gumshoe", "all", "law"],
+    ["Iron First", "all", "law"],
+    ["Teetotaler", "all", "law"],
+    ["The Heat", "all", "law"],
+    ["Buttercup", "female", "law"],
+    ["Cookie", "female", "law"],
+    ["Lady", "female", "law"],
+    ["Ma", "female", "law"],
+    ["Sunshine", "female", "law"],
+    ["Buzz", "male", "law"],
+    ["Cool Hand", "male", "law"],
+    ["Honest Abe", "male", "law"],
+    ["The Knight", "male", "law"]
+];
+
+theNicknamesResults = [];
+
+// Get random name 
+function getRandomNickname(randomNicknameObj) {
+    const keys = Object.keys(randomNicknameObj);
+    return keys[Math.floor(Math.random() * keys.length)];
+}
+//   Fill name 
+function generateTheName() {
+    const theFinalNickname = getRandomNickname(theNicknamesResults);
+    document.getElementById("mobName").innerHTML = theNicknamesResults[theFinalNickname][0];
+}
 
 // Add Dots +++
 function buildTheDotsNG() {
@@ -61,24 +106,104 @@ function SHButtonsAndGenerateNickname() {
 SHButtonsAndGenerateNickname()
 
 function genNicknameGenerateVariables() {
+    // 
+    // SeX => male - female - gender neutral (all (what did you pick "all" @James ))
+    genNicknameAnswers('input[name="question1"]','question1') 
     genNicknameAnswers('input[name="question1"]','question1') 
     console.log("Q1 ID = " + question1selectedTheID)
-    genNicknameAnswers('input[name="question1"]','question1') 
     console.log("Q1 Value = " + question1selectedValue)
     // 
-    // 
+    // Side => law - mob/mob 
     genNicknameAnswers('input[name="question3"]','question3') 
+    genNicknameAnswers('input[name="question3"]','question3')
     console.log("Q3 ID = " + question3selectedTheID)
-    genNicknameAnswers('input[name="question3"]','question3') 
     console.log("Q3 Value = " + question3selectedValue)
     // 
-    // 
+    // Role => capo - consigliere - wife - politician - cop - boss - knowsomebody
+    genNicknameAnswers('input[name="question5"]','question5') 
     genNicknameAnswers('input[name="question5"]','question5') 
     console.log("Q5 ID = " + question5selectedTheID)
-    genNicknameAnswers('input[name="question5"]','question5') 
     console.log("Q5 Value = " + question5selectedValue)
+ 
+    allTheNicknames.forEach((allTheNickname) => {
+    if (
+        (allTheNickname[2] == question3selectedValue) &
+        (allTheNickname[1] == question1selectedValue || allTheNickname[1] == "all")
+    ) {
+        theNicknamesResults.push(allTheNickname);
+    }
+    });
+    /*
+        occupation 
+    */ 
+
+    var ngOccupationFill = ""
+
+    // question1selectedValue 
+    // question5selectedValue
+
+if (question5selectedValue = "capo" ){
+    console.log("It is capo")
+        if (question1selectedValue == "all"){
+            var ngOccupationFill = "Speakeasy Owner"
+        }else{
+            var ngOccupationFill = "Boss"
+        }
+} else if (question5selectedValue = "consigliere" ){
+
+    if (question1selectedValue == "male"){
+        var ngOccupationFill = "Consigliere"
+    }else if (question1selectedValue == "female"){
+        var ngOccupationFill = "Mob Wife"
+    }else{
+        var ngOccupationFill = "Speakeasy Owner"
+    }
 
 
+} else{
+    var ngOccupationFill = "not the droids you are looking for"
+}
+
+
+
+document.getElementById("MobOccupation").innerHTML = ngOccupationFill
+
+
+
+
+
+
+console.log("occupation" + " => " + ngOccupationFill)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 
 }
 // 
 function genNicknameAnswers(ngRadioInputAnswer, p2) {
@@ -92,16 +217,14 @@ function genNicknameAnswers(ngRadioInputAnswer, p2) {
             // 
             window [p2+'selectedTheID'] = selectedID
             window [p2+'selectedValue'] = selectedValue
-          
-
             break;
         }
     }
 
-    // console.log(selectedTheID)
-    // console.log(selectedID)
-    // console.log("-----------------------")
-  }
+    console.log(selectedTheID)
+    console.log(selectedID)
+    console.log("-----------------------")
+}
 // 
 function genNicknameOnSubmit() {
     // Set vars 
@@ -109,11 +232,17 @@ function genNicknameOnSubmit() {
     const inputfirstName = document.querySelector('input[name="firstName"]').value
     const inputlastName = document.querySelector('input[name="lastName"]').value
 
-
     // fill first name 
     fillfirstName.innerHTML = inputfirstName
     // fill last name 
     filllastName.innerHTML = inputlastName
+
+    generateTheName();
+    genNicknameAfterSubmit() 
+
+
+
+
 }
 
 function genNicknameAfterSubmit() {
@@ -121,18 +250,7 @@ function genNicknameAfterSubmit() {
     // question1selectedTheID
     // question3selectedTheID
     // question5selectedTheID
-
-
-
-
-
-
-
 }
-
-
-
-
 
 // Generate Nickname Button
 function genNicknameButton() {
