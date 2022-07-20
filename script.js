@@ -25,45 +25,13 @@ function padLeadingZeros(num, size) {
     return s
 }
 // 
-const allTheNicknames = [
-    ["The Shiv", "all", "mob"],
-    ["Trigger", "all", "mob"],
-    ["Big Tuna", "male", "mob"],
-    ["Egg Man", "male", "mob"],
-    ["Grim Reaper", "male", "mob"],
-    ["Iceman", "male", "mob"],
-    ["Mad Dog", "male", "mob"],
-    ["Scotty", "male", "mob"],
-    ["Shorty", "male", "mob"],
-    ["The Barber", "male", "mob"],
-    ["The Enforcer", "male", "mob"],
-    ["The Kid", "male", "mob"],
-    ["The Muscle", "male", "mob"],
-    ["Triggerman", "male", "mob"],
-    ["Copper", "all", "law"],
-    ["Eagle Eye", "all", "law"],
-    ["Gumshoe", "all", "law"],
-    ["Iron First", "all", "law"],
-    ["Teetotaler", "all", "law"],
-    ["The Heat", "all", "law"],
-    ["Buttercup", "female", "law"],
-    ["Cookie", "female", "law"],
-    ["Lady", "female", "law"],
-    ["Ma", "female", "law"],
-    ["Sunshine", "female", "law"],
-    ["Buzz", "male", "law"],
-    ["Cool Hand", "male", "law"],
-    ["Honest Abe", "male", "law"],
-    ["The Knight", "male", "law"]
-];
-
-theNicknamesResults = [];
 
 // Get random name 
 function getRandomNickname(randomNicknameObj) {
     const keys = Object.keys(randomNicknameObj);
     return keys[Math.floor(Math.random() * keys.length)];
 }
+
 //   Fill name 
 function generateTheName() {
     const theFinalNickname = getRandomNickname(theNicknamesResults);
@@ -90,6 +58,7 @@ function buildTheDotsNG() {
     }
 }
 buildTheDotsNG()
+
 // When to show/hide the dots & generate button 
 function SHButtonsAndGenerateNickname() {
     const questTheQuestionActive = document.querySelector(".NicknameGeneratorItemActive")
@@ -107,7 +76,6 @@ SHButtonsAndGenerateNickname()
 
 function genNicknameGenerateVariables() {
     // 
-    // SeX => male - female - gender neutral (all (what did you pick "all" @James ))
     genNicknameAnswers('input[name="question1"]','question1') 
     genNicknameAnswers('input[name="question1"]','question1') 
     console.log("Q1 ID = " + question1selectedTheID)
@@ -141,69 +109,30 @@ function genNicknameGenerateVariables() {
 
     // question1selectedValue 
     // question5selectedValue
+    if (question5selectedValue = "capo" ){
+        console.log("It is capo")
+            if (question1selectedValue == "all"){
+                var ngOccupationFill = "Speakeasy Owner"
+            }else{
+                var ngOccupationFill = "Boss"
+            }
+    } else if (question5selectedValue = "consigliere" ){
 
-if (question5selectedValue = "capo" ){
-    console.log("It is capo")
-        if (question1selectedValue == "all"){
-            var ngOccupationFill = "Speakeasy Owner"
+        if (question1selectedValue == "male"){
+            var ngOccupationFill = "Consigliere"
+        }else if (question1selectedValue == "female"){
+            var ngOccupationFill = "Mob Wife"
         }else{
-            var ngOccupationFill = "Boss"
+            var ngOccupationFill = "Speakeasy Owner"
         }
-} else if (question5selectedValue = "consigliere" ){
-
-    if (question1selectedValue == "male"){
-        var ngOccupationFill = "Consigliere"
-    }else if (question1selectedValue == "female"){
-        var ngOccupationFill = "Mob Wife"
-    }else{
-        var ngOccupationFill = "Speakeasy Owner"
+    } else{
+        var ngOccupationFill = "not the droids you are looking for"
     }
 
 
-} else{
-    var ngOccupationFill = "not the droids you are looking for"
-}
 
-
-
-document.getElementById("MobOccupation").innerHTML = ngOccupationFill
-
-
-
-
-
-
-console.log("occupation" + " => " + ngOccupationFill)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 
+    document.getElementById("MobOccupation").innerHTML = ngOccupationFill
+    console.log("occupation" + " => " + ngOccupationFill)
 }
 // 
 function genNicknameAnswers(ngRadioInputAnswer, p2) {
@@ -223,7 +152,6 @@ function genNicknameAnswers(ngRadioInputAnswer, p2) {
 
     console.log(selectedTheID)
     console.log(selectedID)
-    console.log("-----------------------")
 }
 // 
 function genNicknameOnSubmit() {
@@ -239,10 +167,6 @@ function genNicknameOnSubmit() {
 
     generateTheName();
     genNicknameAfterSubmit() 
-
-
-
-
 }
 
 function genNicknameAfterSubmit() {

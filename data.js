@@ -1,0 +1,33 @@
+const allTheNicknames = [
+    ["The Shiv", "all", "mob"],
+    ["Trigger", "all", "mob"],
+    ["Big Tuna", "male", "mob"],
+    ["Egg Man", "male", "mob"],
+    ["Grim Reaper", "male", "mob"],
+    ["Iceman", "male", "mob"],
+    ["Mad Dog", "male", "mob"],
+    ["Scotty", "male", "mob"],
+    ["Shorty", "male", "mob"],
+    ["The Barber", "male", "mob"],
+    ["The Enforcer", "male", "mob"],
+    ["The Kid", "male", "mob"],
+    ["The Muscle", "male", "mob"],
+    ["Triggerman", "male", "mob"],
+    ["Copper", "all", "law"],
+    ["Eagle Eye", "all", "law"],
+    ["Gumshoe", "all", "law"],
+    ["Iron First", "all", "law"],
+    ["Teetotaler", "all", "law"],
+    ["The Heat", "all", "law"],
+    ["Buttercup", "female", "law"],
+    ["Cookie", "female", "law"],
+    ["Lady", "female", "law"],
+    ["Ma", "female", "law"],
+    ["Sunshine", "female", "law"],
+    ["Buzz", "male", "law"],
+    ["Cool Hand", "male", "law"],
+    ["Honest Abe", "male", "law"],
+    ["The Knight", "male", "law"]
+];
+
+theNicknamesResults = [];
