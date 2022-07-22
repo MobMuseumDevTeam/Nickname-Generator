@@ -369,13 +369,13 @@
                 <div class="NicknameGeneratorItem NicknameGeneratorResultsWrap" role="questMobResults" hidden>
                     <div class="NicknameGeneratorResults">
                         <div class="NNGRBackground">
-                            <img src="https://the-mob-museum.s3.amazonaws.com/share/nickname/v2/Results-6.jpg" alt="">
+                            <img src="" alt="" id="NNGRImageWrap">
                         </div>
                         <div class="NNGRContentWrap">
                             <div class="NNGRContent" role="NNGRContent">
                                 <div role="NNGRImage" class="NNGRImage">
                                     <img
-                                        src="https://the-mob-museum.s3.amazonaws.com/share/nickname/v2/Results-6.jpg" />
+                                        src="" id="NNGRImage"/>
                                 </div>
                                 <div class="NNGRUserInfo">
                                     <h2>
@@ -383,11 +383,9 @@
                                         <span data-fill="mobName" class="mobName" id="mobName"></span>
                                         <span data-fill="lastName"></span>
                                     </h2>
-                                    <h3><span>occupation: </span><span id="MobOccupation"></span></h3>
-                                    <h3><span>crime: </span><span>Men buy you things, who are you to trun them
-                                            down?</span>
-                                    </h3>
-                                    <h3><span>your idol: </span><span>Virginia Hill</span></h3>
+                                    <h3><span>occupation: </span><span id="fillOccupation"></span></h3>
+                                    <h3><span>crime: </span><span id="fillCrime"></span></h3>
+                                    <h3><span>your idol: </span><span id="fillIdol"></span></h3>
                                 </div>
                             </div>
                             <div class="NNGRFooter">
@@ -433,7 +431,7 @@
     <!--  -->
     <div class="questResultsSubInfo" role="ResultsSubInfo" hidden>
         <div>
-            <p>You’re the adviser to the boss and to everyone else in the family. They listen to you and respect what you have to say. You give advice when they need it and the rest of the time, you handle the money and make sure things run smoothly.</p>
+            <p id="fillDescription"></p>
             <div class="questIconList">
                 <span style="font-size: 2em;">👨‍💻</span>
                 <span style="font-size: 2em;">👨‍💻</span>

@@ -26,21 +26,22 @@ function padLeadingZeros(num, size) {
 }
 // 
 
+theNicknamesResults = []
+
 // Get random name 
 function getRandomNickname(randomNicknameObj) {
-    const keys = Object.keys(randomNicknameObj);
-    return keys[Math.floor(Math.random() * keys.length)];
+    const keys = Object.keys(randomNicknameObj)
+    return keys[Math.floor(Math.random() * keys.length)]
 }
-
 //   Fill name 
 function generateTheName() {
-    const theFinalNickname = getRandomNickname(theNicknamesResults);
-    document.getElementById("mobName").innerHTML = theNicknamesResults[theFinalNickname][0];
+    const theFinalNickname = getRandomNickname(theNicknamesResults)
+    document.getElementById("mobName").innerHTML = theNicknamesResults[theFinalNickname][0]
 }
 
 // Add Dots +++
 function buildTheDotsNG() {
-    questDots.innerHTML = "";
+    questDots.innerHTML = ""
     var questTheQuestionActive = document.querySelector(".NicknameGeneratorItemActive")
     questTheQuestionActiveGST = questTheQuestionActive.dataset.question
 
@@ -58,7 +59,6 @@ function buildTheDotsNG() {
     }
 }
 buildTheDotsNG()
-
 // When to show/hide the dots & generate button 
 function SHButtonsAndGenerateNickname() {
     const questTheQuestionActive = document.querySelector(".NicknameGeneratorItemActive")
@@ -75,23 +75,9 @@ function SHButtonsAndGenerateNickname() {
 SHButtonsAndGenerateNickname()
 
 function genNicknameGenerateVariables() {
-    // 
     genNicknameAnswers('input[name="question1"]','question1') 
-    genNicknameAnswers('input[name="question1"]','question1') 
-    console.log("Q1 ID = " + question1selectedTheID)
-    console.log("Q1 Value = " + question1selectedValue)
-    // 
-    // Side => law - mob/mob 
-    genNicknameAnswers('input[name="question3"]','question3') 
     genNicknameAnswers('input[name="question3"]','question3')
-    console.log("Q3 ID = " + question3selectedTheID)
-    console.log("Q3 Value = " + question3selectedValue)
-    // 
-    // Role => capo - consigliere - wife - politician - cop - boss - knowsomebody
     genNicknameAnswers('input[name="question5"]','question5') 
-    genNicknameAnswers('input[name="question5"]','question5') 
-    console.log("Q5 ID = " + question5selectedTheID)
-    console.log("Q5 Value = " + question5selectedValue)
  
     allTheNicknames.forEach((allTheNickname) => {
     if (
@@ -102,37 +88,21 @@ function genNicknameGenerateVariables() {
     }
     });
     /*
-        occupation 
+        Fill all data 
     */ 
+ 
+    const allData = nicknameGeneratorData.filter(
+        (role) => role.gender === question1selectedValue && role.role === question5selectedValue
+    );
+   
+   let theFinalData = allData[0]
 
-    var ngOccupationFill = ""
-
-    // question1selectedValue 
-    // question5selectedValue
-    if (question5selectedValue = "capo" ){
-        console.log("It is capo")
-            if (question1selectedValue == "all"){
-                var ngOccupationFill = "Speakeasy Owner"
-            }else{
-                var ngOccupationFill = "Boss"
-            }
-    } else if (question5selectedValue = "consigliere" ){
-
-        if (question1selectedValue == "male"){
-            var ngOccupationFill = "Consigliere"
-        }else if (question1selectedValue == "female"){
-            var ngOccupationFill = "Mob Wife"
-        }else{
-            var ngOccupationFill = "Speakeasy Owner"
-        }
-    } else{
-        var ngOccupationFill = "not the droids you are looking for"
-    }
-
-
-
-    document.getElementById("MobOccupation").innerHTML = ngOccupationFill
-    console.log("occupation" + " => " + ngOccupationFill)
+   document.getElementById("fillOccupation").innerHTML = theFinalData.occupation
+   document.getElementById("fillCrime").innerHTML = theFinalData.racket
+   document.getElementById("fillIdol").innerHTML = theFinalData.idol
+   document.getElementById("fillDescription").innerHTML = theFinalData.description
+   document.getElementById("NNGRImage").src = theFinalData.img
+   document.getElementById("NNGRImageWrap").src = theFinalData.img
 }
 // 
 function genNicknameAnswers(ngRadioInputAnswer, p2) {
@@ -143,28 +113,19 @@ function genNicknameAnswers(ngRadioInputAnswer, p2) {
         if (radioButton.checked) {
             selectedValue = radioButton.value
             selectedID = radioButton.id
-            // 
             window [p2+'selectedTheID'] = selectedID
             window [p2+'selectedValue'] = selectedValue
             break;
         }
     }
-
-    console.log(selectedTheID)
-    console.log(selectedID)
 }
 // 
 function genNicknameOnSubmit() {
-    // Set vars 
     genNicknameGenerateVariables() 
     const inputfirstName = document.querySelector('input[name="firstName"]').value
     const inputlastName = document.querySelector('input[name="lastName"]').value
-
-    // fill first name 
     fillfirstName.innerHTML = inputfirstName
-    // fill last name 
     filllastName.innerHTML = inputlastName
-
     generateTheName();
     genNicknameAfterSubmit() 
 }
@@ -178,7 +139,6 @@ function genNicknameAfterSubmit() {
 
 // Generate Nickname Button
 function genNicknameButton() {
-    // Hide all questions 
     questTheQuestion.forEach((questPanel) => {
         questPanel.hidden = true
         questPanel.classList.remove("NicknameGeneratorItemActive")
@@ -193,7 +153,6 @@ function genNicknameButton() {
     TMMNGFooterWrapHide.hidden = true
     TMMNGFooterWrapHide.classList.add("dn")
     questMainWrap.classList.add("TMMNicknameGeneratorDone")
-
     genNicknameOnSubmit()
 }
 
@@ -209,48 +168,37 @@ function backButtonShowHide() {
 }
 // 
 function nextQuestionHandler(e) {
-    //Hide All Tabpane
     questTheQuestion.forEach((questPanel) => {
         questPanel.hidden = true
         questPanel.classList.remove("NicknameGeneratorItemActive")
     });
-    //Show New Tab
     const buttonGTS = e.target.dataset.gts
     const currentTab = questTheQuestion.find(
         (questPanel) => questPanel.getAttribute("data-question") === buttonGTS
     );
     currentTab.classList.add("NicknameGeneratorItemActive")
     currentTab.hidden = false
-    // previous  step 
     questPreviousQuestionRaw = buttonGTS - 01
     questPreviousQuestion = padLeadingZeros(buttonGTS, 2)
-    // Button 
     questBackBtn.setAttribute("data-gts", questPreviousQuestion)
     backButtonShowHide()
     buildTheDotsNG()
     SHButtonsAndGenerateNickname()
-   
 }
 // 
 function previousQuestionHandler(e) {
-    // Hide all questions 
     questTheQuestion.forEach((questPanel) => {
         questPanel.hidden = true
         questPanel.classList.remove("NicknameGeneratorItemActive")
     });
-
-    // Show New Tab
     const questPrevBackBtnGST = padLeadingZeros(questBackBtn.dataset.gts - 01, 2)
     const currentTab = questTheQuestion.find(
         (questPanel) => questPanel.getAttribute("data-question") === questPrevBackBtnGST
     );
-
     currentTab.classList.add("NicknameGeneratorItemActive")
     currentTab.hidden = false
-    // Set button when going back 
     questPreviousQuestionRaw = questPrevBackBtnGST - 01
     questPreviousQuestion = padLeadingZeros(questPrevBackBtnGST, 2)
-    // Button 
     questBackBtn.setAttribute("data-gts", questPreviousQuestion)
     backButtonShowHide()
     buildTheDotsNG()
@@ -258,7 +206,6 @@ function previousQuestionHandler(e) {
 }
 // Take quiz again button 
 function genTakeQuizAgain() {
-    // questTMMNGFormWrap.reset()
     location.reload()
 }
 
