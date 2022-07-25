@@ -37,6 +37,8 @@ function getRandomNickname(randomNicknameObj) {
 function generateTheName() {
     const theFinalNickname = getRandomNickname(theNicknamesResults)
     document.getElementById("mobName").innerHTML = theNicknamesResults[theFinalNickname][0]
+    NGLoadMobName = theNicknamesResults[theFinalNickname][0]
+    // console.log(NGLoadMobName)
 }
 
 // Add Dots +++
@@ -119,6 +121,8 @@ function genNicknameAnswers(ngRadioInputAnswer, p2) {
         }
     }
 }
+
+ 
 // 
 function genNicknameOnSubmit() {
     genNicknameGenerateVariables() 
@@ -131,29 +135,70 @@ function genNicknameOnSubmit() {
 }
 
 function genNicknameAfterSubmit() {
+    const inputfirstName = document.querySelector('input[name="firstName"]').value
+    const inputlastName = document.querySelector('input[name="lastName"]').value
+    // @james @here ---- Confirm vars working 
+    console.log("Mob Name: " + NGLoadMobName)
     // Questions that matter 
-    // question1selectedTheID
-    // question3selectedTheID
-    // question5selectedTheID
+    console.log("Question: " + question1selectedTheID)
+    console.log("Question: " + question3selectedTheID)
+    console.log("Question: " + question5selectedTheID)
+    
+    console.log("First Name: " + inputfirstName)
+    console.log("Last Name: " + inputlastName)
+    // Add data to url
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 // Generate Nickname Button
 function genNicknameButton() {
-    questTheQuestion.forEach((questPanel) => {
-        questPanel.hidden = true
-        questPanel.classList.remove("NicknameGeneratorItemActive")
-    });
-    questTheMobResults.hidden = false
-    questBackBtn.hidden = true
-    questGenNickname.hidden = true
-    questDots.hidden = true
-    questResultsSubInfo.hidden = false
-    questTheMobResults.classList.add("NicknameGeneratorItemActive")
-    TMMNGFooterWrapHide = document.querySelector('[role="TMMNGFooterWrap"]')
-    TMMNGFooterWrapHide.hidden = true
-    TMMNGFooterWrapHide.classList.add("dn")
-    questMainWrap.classList.add("TMMNicknameGeneratorDone")
-    genNicknameOnSubmit()
+
+    const genNicknameButtonFirstName = document.querySelector('input[name="firstName"]')
+    const genNicknameButtonLastName = document.querySelector('input[name="lastName"]')
+
+    if (genNicknameButtonFirstName.value === "" || genNicknameButtonLastName.value === ""){
+        genNicknameButtonFirstName.classList.add("errorFilloutInputNG")
+        genNicknameButtonFirstName.placeholder='Enter your first name'
+        genNicknameButtonLastName.classList.add("errorFilloutInputNG")
+        genNicknameButtonLastName.placeholder='Enter your last name'
+    }else{        
+        questTheQuestion.forEach((questPanel) => {
+            questPanel.hidden = true
+            questPanel.classList.remove("NicknameGeneratorItemActive")
+        });
+        questTheMobResults.hidden = false
+        questBackBtn.hidden = true
+        questGenNickname.hidden = true
+        questDots.hidden = true
+        questResultsSubInfo.hidden = false
+        questTheMobResults.classList.add("NicknameGeneratorItemActive")
+        TMMNGFooterWrapHide = document.querySelector('[role="TMMNGFooterWrap"]')
+        TMMNGFooterWrapHide.hidden = true
+        TMMNGFooterWrapHide.classList.add("dn")
+        questMainWrap.classList.add("TMMNicknameGeneratorDone")
+        genNicknameButtonFirstName.classList.remove("errorFilloutInputNG");
+        genNicknameButtonLastName.classList.remove("errorFilloutInputNG");
+        genNicknameButtonFirstName.placeholder='First Name';
+        genNicknameButtonLastName.placeholder='Last Name';
+        genNicknameOnSubmit()
+    }
 }
 
 // When to show and hide the back button

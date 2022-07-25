@@ -10,7 +10,7 @@
 
 <body>
     <div class="wrap">
-        <form id="" role="TMMNGFormWrap" class="TMMNGFormWrap">
+        <div id="" role="TMMNGFormWrap" class="TMMNGFormWrap">
             <div class="TMMNicknameGenerator">
                 <!--  -->
                 <!--  -->
@@ -355,10 +355,10 @@
                     <div class="TMMNGItemQuizWrap">
                         <div class="TMMNGItemTextAnswerWrap">
                             <div class="TMMNGItemTextAnswer">
-                                <input type="text" placeholder="First Name" name="firstName" value=""/>
+                                <input type="text" placeholder="First Name" name="firstName" value=""  tabindex="4"/>
                             </div>
                             <div class="TMMNGItemTextAnswer">
-                                <input type="text" placeholder="Last Name" name="lastName" value=""/>
+                                <input type="text" placeholder="Last Name" name="lastName" value=""  tabindex="5"/>
                             </div>
                         </div>
                     </div>
@@ -416,17 +416,17 @@
                             <!-- dots added with js -->
                         </div>
                         <div class="TMMNGGenerate" role="generateNickname" hidden>
-                            <span class="generateNicknameButton" role="generateNicknameButton"
-                                onclick="genNicknameButton()">
+                            <button class="generateNicknameButton" role="generateNicknameButton"
+                                onclick="genNicknameButton()"  tabindex="6">
                                 Generate Nickname
-                            </span>
+                            </button>
                         </div>
                     </div>
                     <div class="TMMNGFooterSide TMMNGblank">
                         <!-- Blank -->
                     </div>
                 </div>
-        </form>
+        </div>
     </div>
     <!--  -->
     <div class="questResultsSubInfo" role="ResultsSubInfo" hidden>

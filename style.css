@@ -316,6 +316,48 @@ body {
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill {
   -webkit-text-fill-color: #fff !important;
 }
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG {
+  background-color: #fff !important;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus {
+  background-color: #242424 !important;
+  color: #ffffff !important;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::-moz-placeholder {
+  color: #fff;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus:-ms-input-placeholder {
+  color: #fff;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::placeholder {
+  color: #fff;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus:-ms-input-placeholder {
+  color: #fff;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::-moz-placeholder {
+  color: #850c0f;
+  opacity: 1;
+  font-weight: 600;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:-ms-input-placeholder {
+  color: #850c0f;
+  opacity: 1;
+  font-weight: 600;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::placeholder {
+  color: #850c0f;
+  opacity: 1;
+  font-weight: 600;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:-ms-input-placeholder {
+  color: #850c0f;
+  font-weight: 600;
+}
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::-ms-input-placeholder {
+  color: #850c0f;
+  font-weight: 600;
+}
 
 .NNGRFooter {
   display: flex;
