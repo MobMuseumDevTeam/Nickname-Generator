@@ -265,49 +265,22 @@ questAction.forEach((button) => {
 // Start on last step - TEMP 
 // genNicknameButton() 
 
-
-
-
-
-
-
-if (window.location.href.indexOf("?r=load") != -1){
-    console.log("?r=load")
-    
+if (window.location.href.indexOf("?r=load") != -1){    
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-
     const a1 = urlParams.get('a1')
-    console.log(a1)
     document.getElementById(a1).checked = true
-
     const a3 = urlParams.get('a3')
-    console.log(a3)
     document.getElementById(a3).checked = true
-
     const a5 = urlParams.get('a5')
-    console.log(a5)
     document.getElementById(a5).checked = true
-
-
-    // genNicknameButton() 
-
-
     const fn = urlParams.get('fn')
-    console.log(fn)
-
     const mn = urlParams.get('mn')
-    console.log(mn)
-
     const ln = urlParams.get('ln')
-    console.log(ln)
-
-
     document.querySelector('input[name="firstName"]').value = fn
     document.querySelector('input[name="lastName"]').value = ln
-
     genNicknameButton()
-
     document.getElementById("mobName").innerHTML = mn
-
 }
+
+// Download as image with https://html2canvas.hertzen.com/
