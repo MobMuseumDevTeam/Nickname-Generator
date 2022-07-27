@@ -18,6 +18,8 @@ const questTMMNGFormWrap = document.querySelector('[role="TMMNGFormWrap"]')
 const fillfirstName = document.querySelector('[data-fill="firstName"]')
 const filllastName = document.querySelector('[data-fill="lastName"]')
 
+
+// if (window.location.href.indexOf("?r=load") != -1){}else{}
 // Pad Leading Zero
 function padLeadingZeros(num, size) {
     var s = num + ""
@@ -77,6 +79,7 @@ function SHButtonsAndGenerateNickname() {
 SHButtonsAndGenerateNickname()
 
 function genNicknameGenerateVariables() {
+
     genNicknameAnswers('input[name="question1"]','question1') 
     genNicknameAnswers('input[name="question3"]','question3')
     genNicknameAnswers('input[name="question5"]','question5') 
@@ -130,41 +133,38 @@ function genNicknameOnSubmit() {
     const inputlastName = document.querySelector('input[name="lastName"]').value
     fillfirstName.innerHTML = inputfirstName
     filllastName.innerHTML = inputlastName
-    generateTheName();
-    genNicknameAfterSubmit() 
+    
+    if (window.location.href.indexOf("?r=load") != -1){}else{
+        generateTheName();
+        genNicknameAfterSubmit()   
+    }
+   
 }
 
 function genNicknameAfterSubmit() {
     const inputfirstName = document.querySelector('input[name="firstName"]').value
     const inputlastName = document.querySelector('input[name="lastName"]').value
     // @james @here ---- Confirm vars working 
-    console.log("Mob Name: " + NGLoadMobName)
+
     // Questions that matter 
+    console.log("- - - - - - - - - - - - - -  - - - - ")
     console.log("Question: " + question1selectedTheID)
     console.log("Question: " + question3selectedTheID)
     console.log("Question: " + question5selectedTheID)
-    
+    console.log("- - - - - - - - - - - - - -  - - - - ")
+    console.log("Mob Name: " + NGLoadMobName)
     console.log("First Name: " + inputfirstName)
     console.log("Last Name: " + inputlastName)
+    console.log("- - - - - - - - - - - - - -  - - - - ")
+    // script.js:141 Mob Name: Eagle Eye
+    // script.js:143 Question: q01a01
+    // script.js:144 Question: q03a01
+    // script.js:145 Question: q05a02
+    // script.js:147 First Name: James
+    // script.js:148 Last Name: Riter
     // Add data to url
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // window.history.replaceState(null, null, "?r=load&a1=" + question1selectedTheID + "&a3=" + question3selectedTheID + "&a5=" + question5selectedTheID + "&fn=James \"The Knight\" Riter");
+    window.history.replaceState(null, null, "?r=load&a1="+question1selectedTheID+"&a3="+question3selectedTheID+"&a5="+question5selectedTheID+"&fn="+inputfirstName+"&mn="+NGLoadMobName+"&ln="+inputlastName)
 }
 
 // Generate Nickname Button
@@ -183,6 +183,8 @@ function genNicknameButton() {
             questPanel.hidden = true
             questPanel.classList.remove("NicknameGeneratorItemActive")
         });
+
+        
         questTheMobResults.hidden = false
         questBackBtn.hidden = true
         questGenNickname.hidden = true
@@ -192,6 +194,7 @@ function genNicknameButton() {
         TMMNGFooterWrapHide = document.querySelector('[role="TMMNGFooterWrap"]')
         TMMNGFooterWrapHide.hidden = true
         TMMNGFooterWrapHide.classList.add("dn")
+
         questMainWrap.classList.add("TMMNicknameGeneratorDone")
         genNicknameButtonFirstName.classList.remove("errorFilloutInputNG");
         genNicknameButtonLastName.classList.remove("errorFilloutInputNG");
@@ -251,6 +254,7 @@ function previousQuestionHandler(e) {
 }
 // Take quiz again button 
 function genTakeQuizAgain() {
+    window.history.pushState({}, document.title, "/" + "?=new");
     location.reload()
 }
 
@@ -260,3 +264,50 @@ questAction.forEach((button) => {
 });
 // Start on last step - TEMP 
 // genNicknameButton() 
+
+
+
+
+
+
+
+if (window.location.href.indexOf("?r=load") != -1){
+    console.log("?r=load")
+    
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const a1 = urlParams.get('a1')
+    console.log(a1)
+    document.getElementById(a1).checked = true
+
+    const a3 = urlParams.get('a3')
+    console.log(a3)
+    document.getElementById(a3).checked = true
+
+    const a5 = urlParams.get('a5')
+    console.log(a5)
+    document.getElementById(a5).checked = true
+
+
+    // genNicknameButton() 
+
+
+    const fn = urlParams.get('fn')
+    console.log(fn)
+
+    const mn = urlParams.get('mn')
+    console.log(mn)
+
+    const ln = urlParams.get('ln')
+    console.log(ln)
+
+
+    document.querySelector('input[name="firstName"]').value = fn
+    document.querySelector('input[name="lastName"]').value = ln
+
+    genNicknameButton()
+
+    document.getElementById("mobName").innerHTML = mn
+
+}
