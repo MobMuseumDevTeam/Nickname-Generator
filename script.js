@@ -79,92 +79,78 @@ function SHButtonsAndGenerateNickname() {
 SHButtonsAndGenerateNickname()
 
 function genNicknameGenerateVariables() {
+    genNicknameAnswers('input[name="question1"]', 'question1')
+    genNicknameAnswers('input[name="question3"]', 'question3')
+    genNicknameAnswers('input[name="question5"]', 'question5')
 
-    genNicknameAnswers('input[name="question1"]','question1') 
-    genNicknameAnswers('input[name="question3"]','question3')
-    genNicknameAnswers('input[name="question5"]','question5') 
- 
     allTheNicknames.forEach((allTheNickname) => {
-    if (
-        (allTheNickname[2] == question3selectedValue) &
-        (allTheNickname[1] == question1selectedValue || allTheNickname[1] == "all")
-    ) {
-        theNicknamesResults.push(allTheNickname);
-    }
+        if (
+            (allTheNickname[2] == question3selectedValue) &
+            (allTheNickname[1] == question1selectedValue || allTheNickname[1] == "all")
+        ) {
+            theNicknamesResults.push(allTheNickname);
+        }
     });
     /*
         Fill all data 
-    */ 
- 
+    */
+
     const allData = nicknameGeneratorData.filter(
         (role) => role.gender === question1selectedValue && role.role === question5selectedValue
     );
-   
-   let theFinalData = allData[0]
 
-   document.getElementById("fillOccupation").innerHTML = theFinalData.occupation
-   document.getElementById("fillCrime").innerHTML = theFinalData.racket
-   document.getElementById("fillIdol").innerHTML = theFinalData.idol
-   document.getElementById("fillDescription").innerHTML = theFinalData.description
-   document.getElementById("NNGRImage").src = theFinalData.img
-   document.getElementById("NNGRImageWrap").src = theFinalData.imgBlur
+    theFinalData = allData[0]
+
+    document.getElementById("fillOccupation").innerHTML = theFinalData.occupation
+    document.getElementById("fillCrime").innerHTML = theFinalData.racket
+    document.getElementById("fillIdol").innerHTML = theFinalData.idol
+    document.getElementById("fillDescription").innerHTML = theFinalData.description
+    document.getElementById("NNGRImage").src = theFinalData.img
+    document.getElementById("NNGRImageWrap").src = theFinalData.imgBlur
+
+
+
 }
 // 
 function genNicknameAnswers(ngRadioInputAnswer, p2) {
-     const radioButtons = document.querySelectorAll(ngRadioInputAnswer)
+    const radioButtons = document.querySelectorAll(ngRadioInputAnswer)
 
     let selectedTheID;
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
             selectedValue = radioButton.value
             selectedID = radioButton.id
-            window [p2+'selectedTheID'] = selectedID
-            window [p2+'selectedValue'] = selectedValue
+            window[p2 + 'selectedTheID'] = selectedID
+            window[p2 + 'selectedValue'] = selectedValue
             break;
         }
     }
 }
 
- 
 // 
 function genNicknameOnSubmit() {
-    genNicknameGenerateVariables() 
+    genNicknameGenerateVariables()
     const inputfirstName = document.querySelector('input[name="firstName"]').value
     const inputlastName = document.querySelector('input[name="lastName"]').value
     fillfirstName.innerHTML = inputfirstName
     filllastName.innerHTML = inputlastName
-    
-    if (window.location.href.indexOf("?r=load") != -1){}else{
+
+    // @fix @james @joe 
+    // Why am I using an else 
+    if (window.location.href.indexOf("?r=load") != -1) { } else {
         generateTheName();
-        genNicknameAfterSubmit()   
+        genNicknameAfterSubmit()
     }
-   
 }
 
 function genNicknameAfterSubmit() {
     const inputfirstName = document.querySelector('input[name="firstName"]').value
     const inputlastName = document.querySelector('input[name="lastName"]').value
-    // @james @here ---- Confirm vars working 
+    window.history.replaceState(null, null, "?r=load&a1=" + question1selectedTheID + "&a3=" + question3selectedTheID + "&a5=" + question5selectedTheID + "&fn=" + inputfirstName + "&mn=" + NGLoadMobName + "&ln=" + inputlastName)
 
-    // Questions that matter 
-    console.log("- - - - - - - - - - - - - -  - - - - ")
-    console.log("Question: " + question1selectedTheID)
-    console.log("Question: " + question3selectedTheID)
-    console.log("Question: " + question5selectedTheID)
-    console.log("- - - - - - - - - - - - - -  - - - - ")
-    console.log("Mob Name: " + NGLoadMobName)
-    console.log("First Name: " + inputfirstName)
-    console.log("Last Name: " + inputlastName)
-    console.log("- - - - - - - - - - - - - -  - - - - ")
-    // script.js:141 Mob Name: Eagle Eye
-    // script.js:143 Question: q01a01
-    // script.js:144 Question: q03a01
-    // script.js:145 Question: q05a02
-    // script.js:147 First Name: James
-    // script.js:148 Last Name: Riter
-    // Add data to url
-    // window.history.replaceState(null, null, "?r=load&a1=" + question1selectedTheID + "&a3=" + question3selectedTheID + "&a5=" + question5selectedTheID + "&fn=James \"The Knight\" Riter");
-    window.history.replaceState(null, null, "?r=load&a1="+question1selectedTheID+"&a3="+question3selectedTheID+"&a5="+question5selectedTheID+"&fn="+inputfirstName+"&mn="+NGLoadMobName+"&ln="+inputlastName)
+
+    genMAilToLink()
+
 }
 
 // Generate Nickname Button
@@ -173,18 +159,18 @@ function genNicknameButton() {
     const genNicknameButtonFirstName = document.querySelector('input[name="firstName"]')
     const genNicknameButtonLastName = document.querySelector('input[name="lastName"]')
 
-    if (genNicknameButtonFirstName.value === "" || genNicknameButtonLastName.value === ""){
+    if (genNicknameButtonFirstName.value === "" || genNicknameButtonLastName.value === "") {
         genNicknameButtonFirstName.classList.add("errorFilloutInputNG")
-        genNicknameButtonFirstName.placeholder='Enter your first name'
+        genNicknameButtonFirstName.placeholder = 'Enter your first name'
         genNicknameButtonLastName.classList.add("errorFilloutInputNG")
-        genNicknameButtonLastName.placeholder='Enter your last name'
-    }else{        
+        genNicknameButtonLastName.placeholder = 'Enter your last name'
+    } else {
         questTheQuestion.forEach((questPanel) => {
             questPanel.hidden = true
             questPanel.classList.remove("NicknameGeneratorItemActive")
         });
 
-        
+
         questTheMobResults.hidden = false
         questBackBtn.hidden = true
         questGenNickname.hidden = true
@@ -198,10 +184,14 @@ function genNicknameButton() {
         questMainWrap.classList.add("TMMNicknameGeneratorDone")
         genNicknameButtonFirstName.classList.remove("errorFilloutInputNG");
         genNicknameButtonLastName.classList.remove("errorFilloutInputNG");
-        genNicknameButtonFirstName.placeholder='First Name';
-        genNicknameButtonLastName.placeholder='Last Name';
+        genNicknameButtonFirstName.placeholder = 'First Name';
+        genNicknameButtonLastName.placeholder = 'Last Name';
         genNicknameOnSubmit()
     }
+
+
+
+
 }
 
 // When to show and hide the back button
@@ -265,22 +255,45 @@ questAction.forEach((button) => {
 // Start on last step - TEMP 
 // genNicknameButton() 
 
-if (window.location.href.indexOf("?r=load") != -1){    
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const a1 = urlParams.get('a1')
+function populateDataFromURL(){
+    queryString = window.location.search;
+    urlParams = new URLSearchParams(queryString)
+    a1 = urlParams.get('a1')
+    a3 = urlParams.get('a3')
+    a5 = urlParams.get('a5')
+    fn = urlParams.get('fn')
+    mn = urlParams.get('mn')
+    ln = urlParams.get('ln')
+}
+
+
+
+if (window.location.href.indexOf("?r=load") != -1) {
+    populateDataFromURL()
     document.getElementById(a1).checked = true
-    const a3 = urlParams.get('a3')
     document.getElementById(a3).checked = true
-    const a5 = urlParams.get('a5')
     document.getElementById(a5).checked = true
-    const fn = urlParams.get('fn')
-    const mn = urlParams.get('mn')
-    const ln = urlParams.get('ln')
     document.querySelector('input[name="firstName"]').value = fn
     document.querySelector('input[name="lastName"]').value = ln
     genNicknameButton()
     document.getElementById("mobName").innerHTML = mn
+    genMAilToLink()
 }
 
 // Download as image with https://html2canvas.hertzen.com/
+// @here @joe @james 
+// The NGMailToLink.href = theMAilToLink
+// Is not adding the URL as it should to 
+// NGMailToLink = document.getElementById('NGMailToLink')
+function genMAilToLink(){
+    getTheFullURL = window.location.href
+    ngImANickname = document.getElementById("fillOccupation").innerHTML;
+    mailToSubject = "The Mob Museum says I'm a " + ngImANickname + "!"
+    mailToBody = "Check out my mobster card on the mob museum's site: " +  getTheFullURL 
+    theMAilToLink = "mailto:?subject=" + mailToSubject + "&amp;body=" + mailToBody + ""
+
+    console.log(theMAilToLink)
+
+    NGMailToLink = document.getElementById('NGMailToLink')
+    NGMailToLink.href = theMAilToLink
+}

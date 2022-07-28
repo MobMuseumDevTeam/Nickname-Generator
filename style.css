@@ -440,6 +440,9 @@ body {
   padding: 0.5em;
   transition: all 500ms ease;
 }
+.questIconListItem a {
+  color: transparent;
+}
 
 .questIconListItem b {
   cursor: pointer;

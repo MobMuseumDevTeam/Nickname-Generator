@@ -554,6 +554,9 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 .questIconListItem {
     padding: .5em;
     transition: all 500ms ease;
+	a{
+		color: transparent;
+	}
 }
 
 .questIconListItem b {cursor: pointer;}
