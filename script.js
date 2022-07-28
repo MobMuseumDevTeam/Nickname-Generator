@@ -107,7 +107,7 @@ function genNicknameGenerateVariables() {
    document.getElementById("fillIdol").innerHTML = theFinalData.idol
    document.getElementById("fillDescription").innerHTML = theFinalData.description
    document.getElementById("NNGRImage").src = theFinalData.img
-   document.getElementById("NNGRImageWrap").src = theFinalData.img
+   document.getElementById("NNGRImageWrap").src = theFinalData.imgBlur
 }
 // 
 function genNicknameAnswers(ngRadioInputAnswer, p2) {
