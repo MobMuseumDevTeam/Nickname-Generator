@@ -1,7 +1,9 @@
 /*
     1: Back button 
     2: swip on phones 
-    3: count steps and get what step is active so we can remove the need for numbering things 
+
+    // Download as image with https://html2canvas.hertzen.com/
+    // https://html2canvas.hertzen.com/features/
 */
 const questMainWrap = document.querySelector(".TMMNicknameGenerator")
 const questAction = questMainWrap.querySelectorAll('[role="questTheAction"]')
@@ -18,8 +20,6 @@ const questTMMNGFormWrap = document.querySelector('[role="TMMNGFormWrap"]')
 const fillfirstName = document.querySelector('[data-fill="firstName"]')
 const filllastName = document.querySelector('[data-fill="lastName"]')
 
-
-// if (window.location.href.indexOf("?r=load") != -1){}else{}
 // Pad Leading Zero
 function padLeadingZeros(num, size) {
     var s = num + ""
@@ -27,7 +27,6 @@ function padLeadingZeros(num, size) {
     return s
 }
 // 
-
 theNicknamesResults = []
 
 // Get random name 
@@ -40,7 +39,6 @@ function generateTheName() {
     const theFinalNickname = getRandomNickname(theNicknamesResults)
     document.getElementById("mobName").innerHTML = theNicknamesResults[theFinalNickname][0]
     NGLoadMobName = theNicknamesResults[theFinalNickname][0]
-    // console.log(NGLoadMobName)
 }
 
 // Add Dots +++
@@ -107,9 +105,6 @@ function genNicknameGenerateVariables() {
     document.getElementById("fillDescription").innerHTML = theFinalData.description
     document.getElementById("NNGRImage").src = theFinalData.img
     document.getElementById("NNGRImageWrap").src = theFinalData.imgBlur
-
-
-
 }
 // 
 function genNicknameAnswers(ngRadioInputAnswer, p2) {
@@ -135,7 +130,7 @@ function genNicknameOnSubmit() {
     fillfirstName.innerHTML = inputfirstName
     filllastName.innerHTML = inputlastName
 
-    // @fix @james @joe 
+    // @here @james @joe 
     // Why am I using an else 
     if (window.location.href.indexOf("?r=load") != -1) { } else {
         generateTheName();
@@ -148,9 +143,7 @@ function genNicknameAfterSubmit() {
     const inputlastName = document.querySelector('input[name="lastName"]').value
     window.history.replaceState(null, null, "?r=load&a1=" + question1selectedTheID + "&a3=" + question3selectedTheID + "&a5=" + question5selectedTheID + "&fn=" + inputfirstName + "&mn=" + NGLoadMobName + "&ln=" + inputlastName)
 
-
     genMAilToLink()
-
 }
 
 // Generate Nickname Button
@@ -170,7 +163,6 @@ function genNicknameButton() {
             questPanel.classList.remove("NicknameGeneratorItemActive")
         });
 
-
         questTheMobResults.hidden = false
         questBackBtn.hidden = true
         questGenNickname.hidden = true
@@ -188,10 +180,6 @@ function genNicknameButton() {
         genNicknameButtonLastName.placeholder = 'Last Name';
         genNicknameOnSubmit()
     }
-
-
-
-
 }
 
 // When to show and hide the back button
@@ -268,19 +256,6 @@ function populateDataFromURL(){
 
 
 
-if (window.location.href.indexOf("?r=load") != -1) {
-    populateDataFromURL()
-    document.getElementById(a1).checked = true
-    document.getElementById(a3).checked = true
-    document.getElementById(a5).checked = true
-    document.querySelector('input[name="firstName"]').value = fn
-    document.querySelector('input[name="lastName"]').value = ln
-    genNicknameButton()
-    document.getElementById("mobName").innerHTML = mn
-    genMAilToLink()
-}
-
-// Download as image with https://html2canvas.hertzen.com/
 // @here @joe @james 
 // The NGMailToLink.href = theMAilToLink
 // Is not adding the URL as it should to 
@@ -292,8 +267,20 @@ function genMAilToLink(){
     mailToBody = "Check out my mobster card on the mob museum's site: " +  getTheFullURL 
     theMAilToLink = "mailto:?subject=" + mailToSubject + "&amp;body=" + mailToBody + ""
 
-    console.log(theMAilToLink)
-
+    // console.log(theMAilToLink)
     NGMailToLink = document.getElementById('NGMailToLink')
     NGMailToLink.href = theMAilToLink
+}
+
+// 
+if (window.location.href.indexOf("?r=load") != -1) {
+    populateDataFromURL()
+    document.getElementById(a1).checked = true
+    document.getElementById(a3).checked = true
+    document.getElementById(a5).checked = true
+    document.querySelector('input[name="firstName"]').value = fn
+    document.querySelector('input[name="lastName"]').value = ln
+    genNicknameButton()
+    document.getElementById("mobName").innerHTML = mn
+    genMAilToLink()
 }
