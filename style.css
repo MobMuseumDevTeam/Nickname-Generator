@@ -234,6 +234,9 @@ body {
   position: relative;
   border: 0.75em solid #ffffff;
   transform: rotate(3deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-background-clip: content-box;
+  box-shadow: 0 1rem 2rem #201912;
 }
 .NNGRContentWrap .NNGRUserInfo {
   position: absolute;
@@ -250,17 +253,16 @@ body {
 .NNGRContentWrap .NNGRUserInfo h3 {
   background: #ffffff;
   color: #000;
-  text-align: right;
   display: inline-block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   align-self: end;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
   max-width: 80%;
-  right: -0.25em;
+  right: -0.25rem;
   position: relative;
-  padding: 0.25em 0.5em 0.25em 0.1em;
+  padding: 0.25rem 1rem 0.25rem 0.1rem;
   display: flex;
   align-items: center;
 }
