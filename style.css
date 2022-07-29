@@ -7,26 +7,16 @@ NicknameGeneratorItemStack
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   background: #000;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   font-family: ronnia, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -52,7 +42,6 @@ body {
   position: relative;
   min-height: 75vh;
 }
-
 .TMMNicknameGenerator:after {
   position: absolute;
   bottom: 0;
@@ -63,25 +52,20 @@ body {
   z-index: -1;
   content: url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png") url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_verticalSide.png");
 }
-
 .TMMNicknameGenerator.TMMNicknameGeneratorDone {
   max-width: 530px;
 }
-
 .TMMNicknameGenerator img {
   max-width: 100%;
 }
-
 .TMMNicknameGenerator .TMMNGItemImgWrap {
   position: relative;
 }
-
 .TMMNicknameGenerator .TMMNGItemImg {
   font-size: 0;
   position: relative;
   height: 100%;
 }
-
 .TMMNicknameGenerator .TMMNGItemImg img {
   max-width: 100%;
   min-height: 250px;
@@ -92,7 +76,6 @@ body {
   -o-object-position: top center;
      object-position: top center;
 }
-
 .TMMNicknameGenerator .TMMNGItemImg:after {
   content: " ";
   position: absolute;
@@ -103,22 +86,18 @@ body {
   background-size: 100% 100%;
   background-image: url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png");
 }
-
 @media (min-width: 1024px) {
   .TMMNicknameGenerator .TMMNGItemImg:after {
     background-image: url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_verticalSide.png");
   }
 }
-
 .TMMNicknameGenerator .NicknameGeneratorItem {
   height: 100% !important;
   min-height: 75vh;
 }
-
 .TMMNicknameGenerator .NicknameGeneratorItemStack .TMMNGItemImg:after {
   background-image: url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png");
 }
-
 .TMMNicknameGenerator .TMMNGItemHeader {
   color: #ffffff;
   font-size: 1.4rem;
@@ -126,23 +105,17 @@ body {
   padding: 0.5em;
   text-align: center;
 }
-
 .TMMNicknameGenerator .TMMNGItemHeader h2 {
   text-transform: uppercase;
   margin-top: 2rem;
 }
-
 .TMMNicknameGenerator .TMMNGItemAnswer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
-.TMMNicknameGenerator .TMMNGItemAnswer [type="radio"] {
+.TMMNicknameGenerator .TMMNGItemAnswer [type=radio] {
   display: none;
 }
-
-.TMMNicknameGenerator .TMMNGItemAnswer [type="radio"] + label {
+.TMMNicknameGenerator .TMMNGItemAnswer [type=radio] + label {
   color: #ffffff;
   font-size: 1.2em;
   text-align: center;
@@ -150,51 +123,39 @@ body {
   width: calc(100% - 4em);
   max-width: 100%;
   border: 1px solid #afafaf;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   margin: 0 auto 1em;
   cursor: pointer;
   border-radius: 8px;
 }
-
-.TMMNicknameGenerator .TMMNGItemAnswer [type="radio"] + label:hover {
+.TMMNicknameGenerator .TMMNGItemAnswer [type=radio] + label:hover {
   background-color: #270404;
 }
-
-.TMMNicknameGenerator .TMMNGItemAnswer [type="radio"]:checked + label {
+.TMMNicknameGenerator .TMMNGItemAnswer [type=radio]:checked + label {
   background-color: #850c0f;
 }
 
 .TMMNGFooterWrap {
   color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   min-height: 2em;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .TMMNGFooterWrap .TMMNGFooterCenter {
   width: 50%;
   text-align: center;
 }
-
 .TMMNGFooterWrap .TMMNGFooterSide {
   width: 25%;
   text-align: center;
 }
-
 .TMMNGFooterWrap .TMMNGblank {
   opacity: 0;
 }
-
 .TMMNGFooterWrap .TMMNGdots {
   font-size: 0;
 }
-
 .TMMNGFooterWrap .TMMNGdots .TMMNGdot {
   display: inline-block;
   width: 6px;
@@ -203,22 +164,18 @@ body {
   border-radius: 100%;
   margin: 0 3px;
 }
-
 .TMMNGFooterWrap .TMMNGdots .TMMNGdotActive {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  transform: scale(1.5);
   background: #850c0f !important;
   outline: 1px solid #850c0f;
   outline-offset: -1px;
 }
-
 .TMMNGFooterWrap .TMMNGdots .TMMNGdotDone {
   background: #850c0f !important;
 }
-
 .TMMNGFooterWrap .generateNicknameButton {
   background: #850c0f;
-  padding: .5em;
+  padding: 0.5em;
   display: inline-block;
   margin: 4px 0;
   border-radius: 4px;
@@ -232,11 +189,9 @@ body {
   text-align: center;
   margin-top: 2em;
 }
-
 .questResultsSubInfo .questIconList {
   padding: 1em;
 }
-
 .questResultsSubInfo .ResultsSubInfoButtons {
   background-color: #850c0f !important;
   display: inline-block;
@@ -253,15 +208,9 @@ body {
 .NicknameGeneratorResultsWrap .NicknameGeneratorResults {
   min-height: 350px;
   color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   position: relative;
   padding: 2.5em;
 }
@@ -270,53 +219,37 @@ body {
   position: absolute;
   inset: 0;
 }
-
 .NNGRBackground img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  filter: blur(4px);
 }
 
 .NNGRContentWrap {
   position: relative;
 }
-
 .NNGRContentWrap .NNGRContent {
   position: relative;
   border: 0.75em solid #ffffff;
-  -webkit-transform: rotate(3deg);
-          transform: rotate(3deg);
+  transform: rotate(3deg);
   -webkit-backface-visibility: hidden;
   -webkit-background-clip: content-box;
-  -webkit-box-shadow: 0 1rem 2rem #201912;
-          box-shadow: 0 1rem 2rem #201912;
+  box-shadow: 0 1rem 2rem #201912;
 }
-
 .NNGRContentWrap .NNGRUserInfo {
   position: absolute;
   inset: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-bottom: 2em;
 }
-
 .NNGRContentWrap .NNGRUserInfo h2,
 .NNGRContentWrap .NNGRUserInfo h3 {
-  -webkit-transform: rotate(-3deg);
-          transform: rotate(-3deg);
+  transform: rotate(-3deg);
 }
-
 .NNGRContentWrap .NNGRUserInfo h3 {
   background: #ffffff;
   color: #000;
@@ -324,27 +257,20 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -ms-flex-item-align: end;
-      align-self: end;
-  margin-bottom: .5rem;
+  align-self: end;
+  margin-bottom: 0.5rem;
   max-width: 80%;
   right: -0.25rem;
   position: relative;
-  padding: .25rem 1rem .25rem .1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 0.25rem 1rem 0.25rem 0.1rem;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .NNGRContentWrap .NNGRUserInfo h3 span:first-of-type {
   color: #850c0f;
   text-transform: uppercase;
   padding: 0 8px;
 }
-
 .NNGRContentWrap .NNGRUserInfo h2 {
   background: #850c0f;
   width: -webkit-fit-content;
@@ -355,137 +281,94 @@ body {
   position: relative;
   margin-bottom: 1rem;
 }
-
 .NNGRContentWrap .NNGRUserInfo h2 .mobName:before {
-  content: " \"";
+  content: ' "';
   letter-spacing: 0px;
 }
-
 .NNGRContentWrap .NNGRUserInfo h2 .mobName:after {
-  content: "\" ";
+  content: '" ';
   letter-spacing: 0px;
 }
-
 .NNGRContentWrap .NNGRFooter {
   margin-top: 2em;
 }
 
 .TMMNGItemTextAnswerWrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1em;
   padding: 0 1em;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input {
   width: 100%;
   border: none;
   background-image: none;
   background-color: #242424;
-  -webkit-box-shadow: none;
   box-shadow: none;
   border: 1px solid #cfcfcf;
   border-radius: 10px;
   padding: 13px 8px;
   color: #ffffff;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill, .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill:hover, .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill:focus, .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #242424 inset !important;
   color: #fff !important;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input:-webkit-autofill {
   -webkit-text-fill-color: #fff !important;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG {
   background-color: #fff !important;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus {
   background-color: #242424 !important;
   color: #ffffff !important;
 }
-
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::-webkit-input-placeholder {
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::-moz-placeholder {
   color: #fff;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus:-ms-input-placeholder {
   color: #fff;
 }
-
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::-ms-input-placeholder {
-  color: #fff;
-}
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::placeholder {
   color: #fff;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus:-ms-input-placeholder {
   color: #fff;
 }
-
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::-ms-input-placeholder {
-  color: #fff;
-}
-
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::-webkit-input-placeholder {
+.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::-moz-placeholder {
   color: #850c0f;
   opacity: 1;
   font-weight: 600;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:-ms-input-placeholder {
   color: #850c0f;
   opacity: 1;
   font-weight: 600;
 }
-
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::-ms-input-placeholder {
-  color: #850c0f;
-  opacity: 1;
-  font-weight: 600;
-}
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::placeholder {
   color: #850c0f;
   opacity: 1;
   font-weight: 600;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:-ms-input-placeholder {
   color: #850c0f;
   font-weight: 600;
 }
-
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::-ms-input-placeholder {
   color: #850c0f;
   font-weight: 600;
 }
 
 .NNGRFooter {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .NNGRFooter > div {
   width: 40%;
 }
-
 .NNGRFooter > div img {
   width: 100%;
   max-width: 100%;
@@ -500,13 +383,8 @@ body {
     display: none;
   }
   .TMMNicknameGenerator .NicknameGeneratorItem.NicknameGeneratorItemActive {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+    flex-direction: row-reverse;
   }
   .TMMNicknameGenerator .NicknameGeneratorItem.NicknameGeneratorItemWide .TMMNGItemImgWrap {
     width: 40%;
@@ -525,7 +403,7 @@ body {
     width: 100%;
   }
   .TMMNicknameGenerator .NicknameGeneratorItem.NicknameGeneratorItemStack .TMMNGItemImg img {
-    max-height: calc(75vh / 1.75);
+    max-height: 42.8571428571vh;
     -o-object-position: center;
        object-position: center;
   }
@@ -560,52 +438,40 @@ body {
     padding-left: 2em;
   }
 }
-
 .questIconListItem {
-  padding: 0 .5em;
-  -webkit-transition: all 500ms ease;
+  padding: 0 0.5em;
   transition: all 500ms ease;
   display: inline-block;
 }
-
 .questIconListItem a {
   color: transparent;
 }
-
 .questIconListItem b {
   cursor: pointer;
   position: relative;
   overflow: hidden !important;
   display: inline-block;
 }
-
 .questIconListItem b:hover {
-  opacity: .9;
-  -webkit-transition: all 300ms ease;
+  opacity: 0.9;
   transition: all 300ms ease;
 }
-
 .questIconListItem svg {
   max-width: 2.5em;
 }
-
 .questIconListItem iframe {
   background: green;
   padding: 4px;
   position: absolute !important;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
+  transform: translateY(50%);
   top: 0 !important;
   height: 100% !important;
   width: 100% !important;
-  -webkit-transform: scale(3.5) translateY(31%);
-          transform: scale(3.5) translateY(31%);
-  opacity: .0001;
+  transform: scale(3.5) translateY(31%);
+  opacity: 0.0001;
 }
-
 .questIconListItem .fb-share-button.fb_iframe_widget,
 .questIconListItem .fb-share-button.fb_iframe_widget > span {
   background: red;
   display: contents;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
