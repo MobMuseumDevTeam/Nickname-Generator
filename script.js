@@ -143,7 +143,7 @@ function genNicknameAfterSubmit() {
     const inputlastName = document.querySelector('input[name="lastName"]').value
     window.history.replaceState(null, null, "?r=load&a1=" + question1selectedTheID + "&a3=" + question3selectedTheID + "&a5=" + question5selectedTheID + "&fn=" + inputfirstName + "&mn=" + NGLoadMobName + "&ln=" + inputlastName)
 
-    genMAilToLink()
+    genShareToLink()
 }
 
 // Generate Nickname Button
@@ -260,16 +260,18 @@ function populateDataFromURL(){
 // The NGMailToLink.href = theMAilToLink
 // Is not adding the URL as it should to 
 // NGMailToLink = document.getElementById('NGMailToLink')
-function genMAilToLink(){
+function genShareToLink(){
     getTheFullURL = window.location.href
     ngImANickname = document.getElementById("fillOccupation").innerHTML;
     mailToSubject = "The Mob Museum says I'm a " + ngImANickname + "!"
     mailToBody = "Check out my mobster card on the mob museum's site: " +  getTheFullURL 
     theMAilToLink = "mailto:?subject=" + mailToSubject + "&amp;body=" + mailToBody + ""
 
-    // console.log(theMAilToLink)
+    // Email Link
     NGMailToLink = document.getElementById('NGMailToLink')
     NGMailToLink.href = theMAilToLink
+
+    // Facebook Link
 }
 
 // 
@@ -282,5 +284,5 @@ if (window.location.href.indexOf("?r=load") != -1) {
     document.querySelector('input[name="lastName"]').value = ln
     genNicknameButton()
     document.getElementById("mobName").innerHTML = mn
-    genMAilToLink()
+    genShareToLink()
 }

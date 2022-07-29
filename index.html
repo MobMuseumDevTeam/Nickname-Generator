@@ -6,6 +6,25 @@
     <title>Nickname Generator</title>
     <link rel="stylesheet" href="https://use.typekit.net/hal0loq.css">
     <link href="style.css" rel="stylesheet" />
+    <script>
+        window.twttr = (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
+        nonce="PVjd2gE0"></script>
+    <div id="fb-root"></div>
 </head>
 
 <body>
@@ -431,8 +450,17 @@
             <div>
                 <p id="fillDescription"></p>
                 <div class="questIconList">
+
                     <span class="questIconListItem questIconListFB">
                         <b>
+                            <div class="fb-share-button" data-href="https://themobmuseum.org" data-layout="button"
+                                data-size="small">
+                                <a target="_blank"
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://themobmuseum.org"
+                                    class="fb-xfbml-parse-ignore">
+                                    Share
+                                </a>
+                            </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="70.006" height="70.002"
                                 viewBox="0 0 70.006 70.002">
                                 <path
@@ -441,23 +469,12 @@
                             </svg>
                         </b>
                     </span>
-                    <span class="questIconListItem questIconListIG">
-                        <b>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="70.002" height="70.002"
-                                viewBox="0 0 70.002 70.002">
-                                <path d="M373.555,385.214a6.543,6.543,0,1,0,6.543,6.543,6.543,6.543,0,0,0-6.543-6.543"
-                                    transform="translate(-338.554 -356.756)" fill="#f6ebce" />
-                                <path
-                                    d="M381.993,365.193a35,35,0,1,0,35,35,35,35,0,0,0-35-35M401.5,408.286a14.421,14.421,0,0,1-.913,4.765,10.025,10.025,0,0,1-5.74,5.74,14.384,14.384,0,0,1-4.765.913c-2.094.1-2.762.118-8.092.118s-6-.023-8.092-.118a14.376,14.376,0,0,1-4.765-.913,10.032,10.032,0,0,1-5.741-5.74,14.42,14.42,0,0,1-.913-4.765c-.1-2.094-.118-2.762-.118-8.092s.023-6,.118-8.092a14.412,14.412,0,0,1,.913-4.765,10.039,10.039,0,0,1,5.741-5.741,14.416,14.416,0,0,1,4.765-.911c2.092-.1,2.762-.118,8.092-.118s6,.021,8.092.118a14.424,14.424,0,0,1,4.765.911,10.032,10.032,0,0,1,5.74,5.741,14.413,14.413,0,0,1,.913,4.765c.1,2.094.118,2.762.118,8.092s-.023,6-.118,8.092"
-                                    transform="translate(-346.991 -365.193)" fill="#f6ebce" />
-                                <path
-                                    d="M391.686,383.011a6.484,6.484,0,0,0-3.724-3.724,10.847,10.847,0,0,0-3.645-.677c-2.07-.094-2.691-.114-7.932-.114s-5.862.02-7.932.114a10.847,10.847,0,0,0-3.645.677,6.494,6.494,0,0,0-3.724,3.724,10.886,10.886,0,0,0-.677,3.645c-.094,2.07-.114,2.691-.114,7.932s.02,5.862.114,7.932a10.886,10.886,0,0,0,.677,3.645,6.494,6.494,0,0,0,3.724,3.724,10.847,10.847,0,0,0,3.645.677c2.07.094,2.691.114,7.932.114s5.862-.02,7.932-.114a10.847,10.847,0,0,0,3.645-.677,6.494,6.494,0,0,0,3.724-3.724,10.847,10.847,0,0,0,.677-3.645c.094-2.07.114-2.691.114-7.932s-.02-5.862-.114-7.932a10.847,10.847,0,0,0-.677-3.645m-15.3,21.655a10.079,10.079,0,1,1,10.079-10.079,10.08,10.08,0,0,1-10.079,10.079m10.477-18.2a2.355,2.355,0,1,1,2.355-2.355,2.356,2.356,0,0,1-2.355,2.355"
-                                    transform="translate(-341.384 -359.587)" fill="#f6ebce" />
-                            </svg>
-                        </b>
-                    </span>
                     <span class="questIconListItem questIconListTW">
                         <b>
+                            <a class="twitter-share-button"
+                                href="https://twitter.com/intent/tweet?text=Check out my Mob name" data-size="large">
+                                Tweet
+                            </a>
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 width="70.021" height="70.021" viewBox="0 0 70.021 70.021">
                                 <defs>
@@ -507,29 +524,20 @@
                     <span class="ResultsSubInfoButtons" role="takeQuizAgain" onclick="genTakeQuizAgain()">
                         take again
                     </span>
-                    <a href="#" class="ResultsSubInfoButtons">
+                    <a href="https://themobmuseum.org/plan-your-visit/purchase-tickets/tickets/" class="ResultsSubInfoButtons" target="_blank">
                         plan your visit
                     </a>
                 </div>
             </div>
         </div>
     </div>
-
-
-
     <!--  -->
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script src="html2canvas.min.js"></script>
     <script src="FileSaver.js"></script>
 
-
-
-
-
-
     <script type="text/javascript">
-
         function downloadimage() {
             html2canvas(document.querySelector('[role="questMobResults"]')).then(canvas => {
                 canvas.toBlob(function (blob) {
@@ -538,14 +546,6 @@
             });
         }
     </script>
-
-
-
-
-
-
-
-
 </body>
 
 </html>
