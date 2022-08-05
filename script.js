@@ -272,7 +272,8 @@ function genShareToLink(){
     NGMailToLink.href = theMAilToLink
 
     // Facebook Link
-
+    // Probably don't need this - Test MOnday facebookPath = window.location.pathname
+    document.getElementById("fb-share-button").setAttribute("data-href", getTheFullURL);
 
 }
 
