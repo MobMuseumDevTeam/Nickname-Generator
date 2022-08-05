@@ -262,10 +262,11 @@ function populateDataFromURL(){
 // NGMailToLink = document.getElementById('NGMailToLink')
 function genShareToLink(){
     getTheFullURL = window.location.href
+    emailFriendlyUrl = getTheFullURL.replace(/&/g, '%26');
     ngImANickname = document.getElementById("fillOccupation").innerHTML;
     // Email Link
     mailToSubject = "The Mob Museum says I'm a " + ngImANickname + "!"
-    mailToBody = "Check out my mobster card on the mob museum's site: " +  getTheFullURL 
+    mailToBody = "Check out my mobster card on the mob museum's site: " + emailFriendlyUrl
     theMAilToLink = "mailto:?subject=" + mailToSubject + "&body=" + mailToBody + ""
     NGMailToLink = document.getElementById('NGMailToLink')
     NGMailToLink.href = theMAilToLink
