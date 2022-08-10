@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
     <title>Nickname Generator</title>
-    <link rel="stylesheet" href="https://use.typekit.net/hal0loq.css">
-    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/hal0loq.css?vat=sdfsdfsdfh4564efg">
+    <link href="style.css?vat=sdfsdfsdfh4564efg" rel="stylesheet" />
     <script>
         window.twttr = (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0],
@@ -532,16 +533,17 @@
         </div>
     </div>
     <!--  -->
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-    <script src="html2canvas.min.js"></script>
-    <script src="FileSaver.js"></script>
+    <script src="data.js?vat=sdfsdfsdfh4564efg"></script>
+    <script src="script.js?vat=sdfsdfsdfh4564efg"></script>
+    <script src="html2canvas.min.js?vat=sdfsdfsdfh4564efg"></script>
+    <script src="FileSaver.js?vat=sdfsdfsdfh4564efg"></script>
 
     <script type="text/javascript">
         function downloadimage() {
+            var nickNameFileName = Math.floor(100000 + Math.random() * 900000)
             html2canvas(document.querySelector('[role="questMobResults"]')).then(canvas => {
                 canvas.toBlob(function (blob) {
-                    window.saveAs(blob, 'my_image.png');
+                    window.saveAs(blob, 'The_Mob_Museum_Nickname_'+ nickNameFileName +'.png');
                 });
             });
         }

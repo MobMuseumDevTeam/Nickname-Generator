@@ -14,8 +14,6 @@ body {
   background: #000;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   font-family: ronnia, sans-serif;
   font-weight: 400;
@@ -29,7 +27,7 @@ body {
 .wrap {
   width: 100%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 2em;
 }
 
@@ -40,7 +38,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  min-height: 75vh;
+  border: 1px solid #afafaf;
 }
 .TMMNicknameGenerator:after {
   position: absolute;
@@ -93,7 +91,6 @@ body {
 }
 .TMMNicknameGenerator .NicknameGeneratorItem {
   height: 100% !important;
-  min-height: 75vh;
 }
 .TMMNicknameGenerator .NicknameGeneratorItemStack .TMMNGItemImg:after {
   background-image: url("https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png");
@@ -180,6 +177,12 @@ body {
   margin: 4px 0;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  outline: 0 !important;
+  border: 0;
+  margin-bottom: 1em;
 }
 
 .questResultsSubInfo {
@@ -378,9 +381,11 @@ body {
 @media (min-width: 1024px) {
   .TMMNicknameGenerator {
     width: 100%;
+    min-height: 55vh;
   }
   .TMMNicknameGenerator .NicknameGeneratorItem {
     display: none;
+    min-height: 55vh;
   }
   .TMMNicknameGenerator .NicknameGeneratorItem.NicknameGeneratorItemActive {
     display: flex;
@@ -416,6 +421,7 @@ body {
   }
   .TMMNicknameGenerator .TMMNGItemQuizWrap {
     width: 50%;
+    padding-bottom: 3rem;
   }
   .TMMNicknameGenerator .TMMNGItemHeader {
     text-align: left;
@@ -436,6 +442,51 @@ body {
   .TMMNicknameGenerator .TMMNGFooterWrap .TMMNGFooterSide {
     text-align: left;
     padding-left: 2em;
+  }
+}
+@media (max-width: 1024px) {
+  .TMMNGFooterWrap {
+    flex-direction: column-reverse;
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
+  .TMMNGFooterWrap > * {
+    width: 100% !important;
+  }
+  .TMMNGFooterWrap .TMMNGFooterSide.TMMNGback {
+    text-align: left;
+    padding-left: 1em;
+  }
+  .TMMNGItemTextAnswerWrap {
+    flex-direction: column;
+  }
+  .TMMNGItemTextAnswerWrap input {
+    border-radius: 0 !important;
+    border-color: transparent !important;
+    border-bottom-color: #afafaf !important;
+  }
+  .NNGRContentWrap .NNGRUserInfo h2,
+.NNGRContentWrap .NNGRUserInfo h3 {
+    font-size: 14px;
+    max-width: 100%;
+    padding-right: 14px !important;
+  }
+  .NNGRContentWrap .NNGRUserInfo {
+    padding-bottom: 14px;
+  }
+  .NNGRContentWrap .NNGRContent {
+    border-width: 7px;
+  }
+  .TMMNicknameGenerator .TMMNGItemImg img {
+    height: 250px !important;
+  }
+  .TMMNicknameGenerator .TMMNGItemHeader h2 {
+    margin-top: 0em !important;
+  }
+  .TMMNicknameGenerator .TMMNGItemHeader h2 {
+    line-height: 1.2;
+    font-size: 1.2em;
+    margin-bottom: 0.75em;
   }
 }
 .questIconListItem {
@@ -470,7 +521,7 @@ body {
   transform: scale(3.5) translateY(31%);
   opacity: 0.0001;
 }
-.questIconListItem .fb-share-button.fb_iframe_widget,
+.questIconListItem .TMMNGItemQuizWrap .fb-share-button.fb_iframe_widget,
 .questIconListItem .fb-share-button.fb_iframe_widget > span {
   background: red;
   display: contents;

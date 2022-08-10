@@ -232,7 +232,9 @@ function previousQuestionHandler(e) {
 }
 // Take quiz again button 
 function genTakeQuizAgain() {
-    window.history.pushState({}, document.title, "/" + "?=new");
+    window.history.pushState({}, document.title, "?=new");
+    // var sfsfsdf = window.location = window.location.href.split("?")[0];
+    // console.log(sfsfsdf)
     location.reload()
 }
 
