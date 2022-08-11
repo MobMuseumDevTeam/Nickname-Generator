@@ -241,6 +241,9 @@ body {
   -webkit-background-clip: content-box;
   box-shadow: 0 1rem 2rem #201912;
 }
+.NNGRContentWrap .NNGRContent .NNGRImage {
+  font-size: 0;
+}
 .NNGRContentWrap .NNGRUserInfo {
   position: absolute;
   inset: 0;
@@ -506,9 +509,6 @@ body {
   }
   .NNGRContentWrap .NNGRContent {
     border-width: 7px;
-  }
-  .NNGRContentWrap .NNGRContent .NNGRImage {
-    font-size: 0;
   }
   .TMMNicknameGenerator .TMMNGItemImg img {
     height: 250px !important;

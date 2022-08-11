@@ -320,7 +320,9 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		-webkit-backface-visibility: hidden;
 		-webkit-background-clip: content-box;
 		box-shadow: 0 1rem 2rem #201912;
-
+		.NNGRImage {
+			font-size: 0;
+		}
 	}
 
 	.NNGRUserInfo {
@@ -659,9 +661,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	.NNGRContentWrap .NNGRContent {
 		border-width: 7px;
 
-		.NNGRImage {
-			font-size: 0;
-		}
+
 		
 	}
 
