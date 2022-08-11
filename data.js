@@ -156,7 +156,7 @@ var nicknameGeneratorData = [
     },
     {
         role: "cop",
-        gender: "Male",
+        gender: "male",
         occupation: "Cop",
         racket: "None",
         idol: "Estes Kefauver",
