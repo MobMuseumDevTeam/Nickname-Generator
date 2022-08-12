@@ -4,7 +4,8 @@ NicknameGeneratorItemActive
 NicknameGeneratorItemWide
 NicknameGeneratorItemStack
 */
-$NGWidth: 1024px;
+$NGWidth: 530px;
+
 
 * {
 	padding: 0;
@@ -42,8 +43,6 @@ $NickGenColMedium: #afafaf;
 $NickGenColLight: #ffffff;
 $NickGenColRed: #850c0f;
 
-
-
 $NickGenBaseSize: 16px;
 
 $NickGenOverlayImg1: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png";
@@ -66,7 +65,6 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	overflow: hidden;
 	position: relative;
 	border: 1px solid #afafaf;
-	// min-height: 75vh;
 
 	// PreLoad Images 
 	&:after {
@@ -80,10 +78,8 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		content: url($NickGenOverlayImg1) url($NickGenOverlayImg2);
 	}
 
-
-
 	&.TMMNicknameGeneratorDone {
-		max-width: 530px;
+		max-width: $NGWidth;
 	}
 
 	img {
@@ -107,7 +103,6 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			object-fit: cover;
 			width: 100%;
 			height: 100%;
-			// object-position: top center;
 		}
 
 		&:after {
@@ -128,7 +123,6 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 	.NicknameGeneratorItem {
 		height: 100% !important;
-		// min-height: 75vh;
 	}
 
 	.NicknameGeneratorItemStack {
@@ -151,6 +145,9 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			text-transform: uppercase;
 			margin-top: 2rem;
 			text-align: center;
+			span{
+				display: inline-block;
+			}
 		}
 
 	}
@@ -164,16 +161,16 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 			+label {
 				color: $NickGenColLight;
-				font-size: 1.2em;
+				font-size: 1.2rem;
 				text-align: center;
 				display: block;
-				width: calc(100% - 4em);
+				width: calc(100% - 10%);
 				max-width: 100%;
 				border: 1px solid $NickGenColMedium;
-				padding: .5em 1em;
-				margin: 0 auto 1em;
+				padding: .5rem 1rem;
+				margin: 0 auto 1rem;
 				cursor: pointer;
-				border-radius: 8px;
+				border-radius: .5rem;
 
 				&:hover {
 					background-color: darken($NickGenColRed, 20%);
@@ -195,9 +192,9 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	color: $NickGenColLight;
 	display: flex;
 	justify-content: space-around;
-	min-height: 2em;
+	min-height: 2rem;
 	align-items: center;
-	padding-bottom: 1.25em;
+	padding-bottom: 1.25rem;
 
 	.TMMNGFooterCenter {
 		width: 50%;
@@ -220,15 +217,15 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 		.TMMNGdot {
 			display: inline-block;
-			width: 6px;
-			height: 6px;
+			width: .3333rem;
+			height: .3333rem;
 			background: $NickGenColLight;
 			border-radius: 100%;
 			margin: 0 3px;
 		}
 
 		.TMMNGdotActive {
-			transform: scale(1.5);
+			transform: scale(1.75);
 			background: $NickGenColRed  !important;
 			outline: 1px solid $NickGenColRed;
 			outline-offset: -1px;
@@ -243,37 +240,35 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	.generateNicknameButton {
 		background: $NickGenColRed;
 		display: inline-block;
-		margin: 4px 0;
 		cursor: pointer;
-		color: #fff;
+		color: $NickGenColLight;
 		text-transform: uppercase;
 		outline: 0 !important;
 		border: 0;
-		// margin-bottom: 1em;
 		font-family: ronnia, sans-serif;
-		font-size: 16px;
-		padding: 8px 16px;
+		font-size: 1rem;
+		padding: .5rem 1rem;
 		font-weight: 400;
 	}
 }
 
 // Sub Information 
 .questResultsSubInfo {
-	max-width: $NGWidth * 1.24;
+	max-width: calc($NGWidth * 1.25);
 	margin: auto;
 	color: $NickGenColLight;
 	text-align: center;
-	margin-top: 2em;
+	margin-top: 2rem;
 
 	.questIconList {
-		padding: 1em;
+		padding: 1rem;
 	}
 
 	.ResultsSubInfoButtons {
 		background-color: $NickGenColRed  !important;
 		display: inline-block;
 		color: $NickGenColLight;
-		padding: 8px 16px;
+		padding: .5rem 1rem;
 		text-decoration: unset;
 		cursor: pointer;
 		text-transform: uppercase;
@@ -291,9 +286,75 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		padding: 2.5em;
-		padding-bottom: 1.5rem;
+		padding: 10%;
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 50%;
+			z-index: 1;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+		}
 	}
+
+	.NNGRBackground {
+		z-index: 1;
+	}
+
+	.NNGRContentWrap {
+		z-index: 2;
+	}
+
+	//   
+
+}
+
+// 
+.questIconListItem {
+	padding: 0 .5rem;
+	transition: all 500ms ease;
+	display: inline-block;
+
+	a {
+		color: transparent;
+	}
+
+	b {
+		cursor: pointer;
+		position: relative;
+		overflow: hidden !important;
+		display: inline-block;
+
+		&:hover {
+			opacity: .9;
+			transition: all 300ms ease;
+		}
+	}
+
+	svg {
+		max-width: 2.5em;
+	}
+
+	iframe {
+		padding: 4px;
+		position: absolute !important;
+		transform: translateY(50%);
+		top: 0 !important;
+		height: 100% !important;
+		width: 100% !important;
+		transform: scale(3.5) translateY(31%);
+		opacity: .0001;
+	}
+
+	.TMMNGItemQuizWrap .fb-share-button.fb_iframe_widget,
+	.fb-share-button.fb_iframe_widget>span {
+		display: contents;
+	}
+
 }
 
 // 
@@ -305,7 +366,6 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		// filter: blur(4px);
 	}
 
 }
@@ -315,13 +375,16 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 	.NNGRContent {
 		position: relative;
-		border: 0.75em solid $NickGenColLight;
-		transform: rotate(3deg);
-		-webkit-backface-visibility: hidden;
-		-webkit-background-clip: content-box;
-		box-shadow: 0 1rem 2rem #201912;
+ 
+
 		.NNGRImage {
+			position: relative;
+			border: 0.75rem solid $NickGenColLight;
+			-webkit-backface-visibility: hidden;
+			-webkit-background-clip: content-box;
+			box-shadow: 0 1rem 2rem #201912;			
 			font-size: 0;
+			transform: rotate(3deg);
 		}
 	}
 
@@ -332,47 +395,20 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		flex-direction: column;
 		justify-content: flex-end;
 		padding-bottom: 2rem;
-
+		// font-size: $NickGenBaseSize;
+		
 		h2,
 		h3 {
-			transform: rotate(-3deg);
-		}
-
-		h3 {
-			background: $NickGenColLight;
-			color: #000;
-			// text-align: right;
-			display: inline-block;
+			left: -6%;
+			padding: .25rem 1rem;
 			width: fit-content;
-			// align-self: end;
-			margin-bottom: .5rem;
-			max-width: 80%;
-			// right: -0.25rem;
-			left: -2rem;
 			position: relative;
-			padding: .25rem 1rem .25rem .1rem;
-			display: flex;
-			align-items: center;
-
-			span {
-
-				// text-align: left;
-				&:first-of-type {
-					color: $NickGenColRed;
-					text-transform: uppercase;
-					padding: 0 8px;
-					white-space: nowrap;
-				}
-			}
 		}
 
 		h2 {
 			background: $NickGenColRed;
-			width: fit-content;
-			padding: 4px 8px;
-			left: -2rem;
-			position: relative;
-			margin-bottom: .5rem;
+			// margin-bottom: 1rem;
+			// font-size: 1.33em;
 
 			.mobName:before {
 				content: " \"";
@@ -384,6 +420,28 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				letter-spacing: 0px;
 			}
 		}
+		h3 {
+			background: $NickGenColLight;
+			color: #000;
+			display: inline-block;
+			// margin-bottom: .5rem;
+			max-width: 80%;
+			display: flex;
+			align-items: center;
+			// font-size: 1em;
+
+			span {
+				&:first-of-type {
+					color: $NickGenColRed;
+					text-transform: uppercase;
+					padding: 0 8px;
+					padding-left: 0;
+					white-space: nowrap;
+				}
+			}
+		}
+
+
 	}
 
 	.NNGRFooter {
@@ -392,32 +450,29 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 }
 
 .NNGRUserInfo {
-	font-size: 0;
-}
+	font-size: $NickGenBaseSize;
+	@media (max-width: $NGWidth) {
+		font-size: $NickGenBaseSize * .75;
+	}
+	h2,h3{
+			margin-bottom: 1em;
+	}
+	h2 {
+		font-size: 1.23em;
+	}
 
-.NNGRUserInfo h2,
-.NNGRUserInfo h3 {
-	font-size: 1rem;
-}
+	h3 {
+		font-size: 1em;
 
-.NNGRUserInfo h3:first-of-type {
-	left: calc(-2rem + 2px);
-}
-
-.NNGRUserInfo h3:nth-child(3) {
-	left: calc(-2rem + 4px);
-}
-
-
-.NNGRUserInfo h3:nth-child(4) {
-	left: calc(-2rem + 7px);
+	 
+	}
 }
 
 // Text Inputs 
 .TMMNGItemTextAnswerWrap {
 	display: flex;
-	gap: 1em;
-	padding: 0 1em;
+	gap: 1rem;
+	padding: 0 1rem;
 	justify-content: center;
 
 	.TMMNGItemTextAnswer {
@@ -436,7 +491,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			box-shadow: none;
 			border-bottom: 1px solid #cfcfcf;
 			border-radius: 0px;
-			padding: 13px 8px;
+			padding: 1rem .5rem .25rem .15rem;
 			color: $NickGenColLight;
 
 			&:focus {
@@ -491,6 +546,10 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 					color: #850c0f;
 					font-weight: 600;
 				}
+
+				&:not(:placeholder-shown) {
+					background: transparent !important;
+				}
 			}
 		}
 	}
@@ -540,7 +599,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			&.NicknameGeneratorItemStack {
 				&.NicknameGeneratorItemActive {
 					display: block !important;
-					padding-bottom: 4em;
+					padding-bottom: 4rem;
 
 					.TMMNGItemImgWrap {
 						width: 100%;
@@ -572,15 +631,15 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 		.TMMNGItemQuizWrap {
 			width: 50%;
-			// padding-top: 2rem;
 			padding-bottom: 3rem;
 		}
 
 		// 
 		.TMMNGItemHeader {
 			text-align: left;
-			padding-left: 1.5em;
-			margin-bottom: 1.5em;
+			padding-left: 1.5rem;
+			margin-bottom: 1.5rem;
+			
 		}
 
 		.TMMNGItemAnswer [type=radio]+label {
@@ -598,7 +657,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 			.TMMNGFooterSide {
 				text-align: left;
-				padding-left: 2.25em;
+				padding-left: 2.25rem;
 
 				&.TMMNGback {
 					>span {
@@ -613,12 +672,10 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 // Mobile Only
 @media (max-width: $NGWidth) {
-
-	// 
 	.TMMNGFooterWrap {
 		flex-direction: column-reverse;
-		padding-bottom: 1em;
-		padding-top: 1em;
+		padding-bottom: 1rem;
+		padding-top: 1rem;
 	}
 
 	.TMMNGFooterWrap>* {
@@ -627,7 +684,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 	.TMMNGFooterWrap .TMMNGFooterSide.TMMNGback {
 		text-align: left;
-		padding-left: 1em;
+		padding-left: 1rem;
 	}
 
 	// 4
@@ -640,118 +697,39 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		}
 	}
 
-	.TMMNGItemTextAnswerWrap input {
-		// border-radius: 0 !important;
-		// border-color: transparent !important;
-		// border-bottom-color: #afafaf !important;
-	}
-
 	// 
-	.NNGRContentWrap .NNGRUserInfo h2,
-	.NNGRContentWrap .NNGRUserInfo h3 {
-		font-size: 14px;
-		max-width: 100%;
-		padding-right: 14px !important;
-	}
 
-	.NNGRContentWrap .NNGRUserInfo {
-		padding-bottom: 14px;
-	}
+	.NNGRContentWrap {
+		.NNGRContent {
+			border-width: .5rem;
+		}
 
-	.NNGRContentWrap .NNGRContent {
-		border-width: 7px;
+		.NNGRUserInfo {
+			// padding-bottom: 1rem;
 
-
-		
-	}
-
-	// 
-	.TMMNicknameGenerator .TMMNGItemImg img {
-		height: 250px !important;
-		height: 350px !important;
-	}
-
-	.TMMNicknameGenerator .TMMNGItemHeader h2 {
-		margin-top: 0em !important;
-	}
-
-	.TMMNicknameGenerator .TMMNGItemHeader h2 {
-		line-height: 1.2;
-		font-size: 1.2em;
-		margin-bottom: .75em;
-	}
-}
-
-
-
-
-.NicknameGeneratorResults {
-    // border-radius: 40px !important;
-    // overflow: hidden;
-}
-
-.NicknameGeneratorResults:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 50%;
-    z-index: 1;
-    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
-}
-
-.NNGRBackground {
-    z-index: 1;
-}
-
-.NNGRContentWrap {
-    z-index: 2;
-}
-
-// 
-.questIconListItem {
-	padding: 0 .5em;
-	transition: all 500ms ease;
-	display: inline-block;
-
-	a {
-		color: transparent;
-	}
-
-	b {
-		cursor: pointer;
-		position: relative;
-		overflow: hidden !important;
-		display: inline-block;
-
-		&:hover {
-			opacity: .9;
-			transition: all 300ms ease;
+			h2,
+			h3 {
+				max-width: 100%;
+				padding-right: 1rem !important;
+			}
 		}
 	}
 
-	svg {
-		max-width: 2.5em;
-	}
+	.TMMNicknameGenerator {
+		.TMMNGItemImg {
+			img {
+				height: 350px !important;
 
-	iframe {
-		background: green;
-		padding: 4px;
-		position: absolute !important;
-		transform: translateY(50%);
-		top: 0 !important;
-		height: 100% !important;
-		width: 100% !important;
-		transform: scale(3.5) translateY(31%);
-		opacity: .0001;
-	}
+			}
+		}
 
-	.TMMNGItemQuizWrap .fb-share-button.fb_iframe_widget,
-	.fb-share-button.fb_iframe_widget>span {
-		background: red;
-		display: contents;
+		.TMMNGItemHeader {
+			h2 {
+				margin-top: 0em !important;
+				line-height: 1.2;
+				font-size: 1.2em;
+				margin-bottom: .75em;
+			}
+		}
 	}
-
 }
