@@ -17,8 +17,6 @@ body {
 	background: #000;
 	min-height: 100vh;
 	display: flex;
-	// align-items: center;
-	// justify-content: center;
 	flex-direction: column;
 	font-family: ronnia, sans-serif;
 	font-weight: 400;
@@ -48,20 +46,12 @@ $NickGenBaseSize: 16px;
 $NickGenOverlayImg1: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_vertical.png";
 $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/GreyOverlay_verticalSide.png";
 
-
-
-@media (min-width: $NGWidth) {
-	* {
-		// outline: 1px solid red !important;
-	}
-}
-
 //
 .TMMNicknameGenerator {
 	font-size: $NickGenBaseSize;
 	margin: auto;
 	background: $NickGenColDark;
-	border-radius: $NickGenBaseSize / 2;
+	border-radius: calc($NickGenBaseSize / 2);
 	overflow: hidden;
 	position: relative;
 	border: 1px solid #afafaf;

@@ -311,7 +311,6 @@ body {
 .NNGRContentWrap .NNGRUserInfo h3 {
   left: -6%;
   padding: 0.25rem 1rem;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -407,21 +406,10 @@ body {
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::-moz-placeholder {
   color: #fff;
 }
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus:-ms-input-placeholder {
-  color: #fff;
-}
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus::placeholder {
   color: #fff;
 }
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:focus:-ms-input-placeholder {
-  color: #fff;
-}
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG::-moz-placeholder {
-  color: #850c0f;
-  opacity: 1;
-  font-weight: 600;
-}
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:-ms-input-placeholder {
   color: #850c0f;
   opacity: 1;
   font-weight: 600;
@@ -440,9 +428,6 @@ body {
   font-weight: 600;
 }
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:not(:-moz-placeholder-shown) {
-  background: transparent !important;
-}
-.TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:not(:-ms-input-placeholder) {
   background: transparent !important;
 }
 .TMMNGItemTextAnswerWrap .TMMNGItemTextAnswer input.errorFilloutInputNG:not(:placeholder-shown) {
@@ -555,7 +540,7 @@ body {
     border-width: 0.5rem;
   }
   .NNGRContentWrap .NNGRUserInfo h2,
-.NNGRContentWrap .NNGRUserInfo h3 {
+  .NNGRContentWrap .NNGRUserInfo h3 {
     max-width: 100%;
     padding-right: 1rem !important;
   }
