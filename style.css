@@ -134,7 +134,7 @@ body {
   border-radius: 0.5rem;
 }
 .TMMNicknameGenerator .TMMNGItemAnswer [type=radio] + label:hover {
-  background-color: #270404;
+  background-color: #56080a !important;
 }
 @media (max-width: 530px) {
   .TMMNicknameGenerator .TMMNGItemAnswer [type=radio] + label {
@@ -230,7 +230,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 10%;
+  padding: 10% 10% 5% 10%;
 }
 .NicknameGeneratorResultsWrap .NicknameGeneratorResults:after {
   content: "";
@@ -324,9 +324,11 @@ body {
 .NNGRContentWrap .NNGRUserInfo h3 {
   left: -6%;
   padding: 0.25rem 1rem;
+  padding: 0.25rem 0.5rem;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
+  line-height: 1;
 }
 .NNGRContentWrap .NNGRUserInfo h2 {
   background: #850c0f;
@@ -457,6 +459,7 @@ body {
 .NNGRFooter {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .NNGRFooter > div {
   width: 40%;
@@ -470,11 +473,9 @@ body {
 @media (min-width: 530px) {
   .TMMNicknameGenerator {
     width: 100%;
-    min-height: 55vh;
   }
   .TMMNicknameGenerator .NicknameGeneratorItem {
     display: none;
-    min-height: 55vh;
   }
   .TMMNicknameGenerator .NicknameGeneratorItem.NicknameGeneratorItemActive {
     display: flex;
@@ -532,7 +533,7 @@ body {
     text-align: left;
     padding-left: 2.25rem;
   }
-  .TMMNicknameGenerator .TMMNGFooterWrap .TMMNGFooterSide.TMMNGback > span {
+  .TMMNicknameGenerator .TMMNGFooterWrap .TMMNGFooterSide.TMMNGbackspan {
     cursor: pointer;
   }
 }
@@ -570,6 +571,13 @@ body {
   .TMMNicknameGenerator .TMMNGItemImg img {
     height: 350px !important;
   }
+}
+@media (max-width: 530px) and (max-width: 397.5px) {
+  .TMMNicknameGenerator .TMMNGItemImg img {
+    height: 200px !important;
+  }
+}
+@media (max-width: 530px) {
   .TMMNicknameGenerator .TMMNGItemHeader h2 {
     margin-top: 0em !important;
     line-height: 1.2;

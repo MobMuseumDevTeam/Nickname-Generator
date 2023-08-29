@@ -199,11 +199,11 @@ function nextQuestionHandler(e) {
     questTheQuestion.forEach((questPanel) => {
         questPanel.hidden = true
         questPanel.classList.remove("NicknameGeneratorItemActive")
-    });
+    })
     const buttonGTS = e.target.dataset.gts
     const currentTab = questTheQuestion.find(
         (questPanel) => questPanel.getAttribute("data-question") === buttonGTS
-    );
+    )
     currentTab.classList.add("NicknameGeneratorItemActive")
     currentTab.hidden = false
     questPreviousQuestionRaw = buttonGTS - 1
