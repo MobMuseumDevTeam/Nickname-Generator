@@ -21,18 +21,22 @@ body {
 	font-family: ronnia, sans-serif;
 	font-weight: 400;
 	font-style: normal;
-
+	font-size: 16px;
 }
 
 .dn {
 	display: none !important;
 }
 
-.wrap {
+.NGwrap {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2em;
+
+	@media (max-width: $NGWidth) {
+		padding: .5em;
+	}
 }
 
 // Variables 
@@ -135,7 +139,8 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			text-transform: uppercase;
 			margin-top: 2rem;
 			text-align: center;
-			span{
+
+			span {
 				display: inline-block;
 			}
 		}
@@ -164,6 +169,10 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 				&:hover {
 					background-color: darken($NickGenColRed, 20%);
+				}
+
+				@media (max-width: $NGWidth) {
+					font-size: 1rem;
 				}
 			}
 
@@ -216,13 +225,13 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 		.TMMNGdotActive {
 			transform: scale(1.75);
-			background: $NickGenColRed  !important;
+			background: $NickGenColRed !important;
 			outline: 1px solid $NickGenColRed;
 			outline-offset: -1px;
 		}
 
 		.TMMNGdotDone {
-			background: $NickGenColRed  !important;
+			background: $NickGenColRed !important;
 		}
 	}
 
@@ -252,10 +261,12 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 	.questIconList {
 		padding: 1rem;
+		display: flex;
+		justify-content: center;
 	}
 
 	.ResultsSubInfoButtons {
-		background-color: $NickGenColRed  !important;
+		background-color: $NickGenColRed !important;
 		display: inline-block;
 		color: $NickGenColLight;
 		padding: .5rem 1rem;
@@ -365,14 +376,14 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 	.NNGRContent {
 		position: relative;
- 
+
 
 		.NNGRImage {
 			position: relative;
 			border: 0.75rem solid $NickGenColLight;
 			-webkit-backface-visibility: hidden;
 			-webkit-background-clip: content-box;
-			box-shadow: 0 1rem 2rem #201912;			
+			box-shadow: 0 1rem 2rem #201912;
 			font-size: 0;
 			transform: rotate(3deg);
 		}
@@ -386,7 +397,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		justify-content: flex-end;
 		padding-bottom: 2rem;
 		// font-size: $NickGenBaseSize;
-		
+
 		h2,
 		h3 {
 			left: -6%;
@@ -410,6 +421,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				letter-spacing: 0px;
 			}
 		}
+
 		h3 {
 			background: $NickGenColLight;
 			color: #000;
@@ -441,12 +453,20 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 .NNGRUserInfo {
 	font-size: $NickGenBaseSize;
+
 	@media (max-width: $NGWidth) {
 		font-size: $NickGenBaseSize * .75;
 	}
-	h2,h3{
-			margin-bottom: 1em;
+
+	h2,
+	h3 {
+		margin-bottom: 1em;
+
+		@media (max-width: $NGWidth) {
+			margin-bottom: .5em;
+		}
 	}
+
 	h2 {
 		font-size: 1.23em;
 	}
@@ -454,7 +474,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 	h3 {
 		font-size: 1em;
 
-	 
+
 	}
 }
 
@@ -506,7 +526,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 				&:focus {
 					background-color: #242424 !important;
-					color: $NickGenColLight  !important;
+					color: $NickGenColLight !important;
 
 					&::placeholder {
 						color: #fff;
@@ -629,7 +649,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			text-align: left;
 			padding-left: 1.5rem;
 			margin-bottom: 1.5rem;
-			
+
 		}
 
 		.TMMNGItemAnswer [type=radio]+label {
@@ -695,7 +715,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		}
 
 		.NNGRUserInfo {
-			// padding-bottom: 1rem;
+			padding-bottom: 1rem;
 
 			h2,
 			h3 {
@@ -710,6 +730,8 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			img {
 				height: 350px !important;
 
+				 
+
 			}
 		}
 
@@ -719,6 +741,10 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				line-height: 1.2;
 				font-size: 1.2em;
 				margin-bottom: .75em;
+				@media (max-width:  ($NGWidth * 1.5)) {
+					margin-bottom: 0;
+
+				}
 			}
 		}
 	}
