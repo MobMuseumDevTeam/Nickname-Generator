@@ -6,7 +6,6 @@ NicknameGeneratorItemStack
 */
 $NGWidth: 530px;
 
-
 * {
 	padding: 0;
 	margin: 0;
@@ -21,18 +20,22 @@ body {
 	font-family: ronnia, sans-serif;
 	font-weight: 400;
 	font-style: normal;
-
+	font-size: 16px;
 }
 
 .dn {
 	display: none !important;
 }
 
-.wrap {
+.NGwrap {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2em;
+
+	@media (max-width: $NGWidth) {
+		padding: .5em;
+	}
 }
 
 // Variables 
@@ -135,7 +138,8 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			text-transform: uppercase;
 			margin-top: 2rem;
 			text-align: center;
-			span{
+
+			span {
 				display: inline-block;
 			}
 		}
@@ -163,7 +167,11 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				border-radius: .5rem;
 
 				&:hover {
-					background-color: darken($NickGenColRed, 20%);
+					background-color: darken($NickGenColRed, 10%) !important;
+				}
+
+				@media (max-width: $NGWidth) {
+					font-size: 1rem;
 				}
 			}
 
@@ -216,13 +224,13 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 		.TMMNGdotActive {
 			transform: scale(1.75);
-			background: $NickGenColRed  !important;
+			background: $NickGenColRed !important;
 			outline: 1px solid $NickGenColRed;
 			outline-offset: -1px;
 		}
 
 		.TMMNGdotDone {
-			background: $NickGenColRed  !important;
+			background: $NickGenColRed !important;
 		}
 	}
 
@@ -252,10 +260,12 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 	.questIconList {
 		padding: 1rem;
+		display: flex;
+		justify-content: center;
 	}
 
 	.ResultsSubInfoButtons {
-		background-color: $NickGenColRed  !important;
+		background-color: $NickGenColRed !important;
 		display: inline-block;
 		color: $NickGenColLight;
 		padding: .5rem 1rem;
@@ -276,7 +286,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		padding: 10%;
+		padding: 10% 10% 5% 10%;
 
 		&:after {
 			content: "";
@@ -365,14 +375,14 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 	.NNGRContent {
 		position: relative;
- 
+
 
 		.NNGRImage {
 			position: relative;
 			border: 0.75rem solid $NickGenColLight;
 			-webkit-backface-visibility: hidden;
 			-webkit-background-clip: content-box;
-			box-shadow: 0 1rem 2rem #201912;			
+			box-shadow: 0 1rem 2rem #201912;
 			font-size: 0;
 			transform: rotate(3deg);
 		}
@@ -386,13 +396,15 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		justify-content: flex-end;
 		padding-bottom: 2rem;
 		// font-size: $NickGenBaseSize;
-		
+
 		h2,
 		h3 {
 			left: -6%;
 			padding: .25rem 1rem;
+			padding: .25rem .5rem;
 			width: fit-content;
 			position: relative;
+			line-height: 1;
 		}
 
 		h2 {
@@ -410,6 +422,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				letter-spacing: 0px;
 			}
 		}
+
 		h3 {
 			background: $NickGenColLight;
 			color: #000;
@@ -430,8 +443,6 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				}
 			}
 		}
-
-
 	}
 
 	.NNGRFooter {
@@ -441,20 +452,26 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 .NNGRUserInfo {
 	font-size: $NickGenBaseSize;
+
 	@media (max-width: $NGWidth) {
 		font-size: $NickGenBaseSize * .75;
 	}
-	h2,h3{
-			margin-bottom: 1em;
+
+	h2,
+	h3 {
+		margin-bottom: 1em;
+
+		@media (max-width: $NGWidth) {
+			margin-bottom: .5em;
+		}
 	}
+
 	h2 {
 		font-size: 1.23em;
 	}
 
 	h3 {
 		font-size: 1em;
-
-	 
 	}
 }
 
@@ -506,7 +523,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 
 				&:focus {
 					background-color: #242424 !important;
-					color: $NickGenColLight  !important;
+					color: $NickGenColLight !important;
 
 					&::placeholder {
 						color: #fff;
@@ -522,18 +539,18 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				}
 
 				&::placeholder {
-					color: #850c0f;
+					color: $NickGenColRed;
 					opacity: 1;
 					font-weight: 600;
 				}
 
 				&:-ms-input-placeholder {
-					color: #850c0f;
+					color: $NickGenColRed;
 					font-weight: 600;
 				}
 
 				&::-ms-input-placeholder {
-					color: #850c0f;
+					color: $NickGenColRed;
 					font-weight: 600;
 				}
 
@@ -549,6 +566,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 .NNGRFooter {
 	display: flex;
 	justify-content: space-between;
+	position: relative;
 
 	>div {
 		width: 40%;
@@ -565,11 +583,11 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 @media (min-width: $NGWidth) {
 	.TMMNicknameGenerator {
 		width: 100%;
-		min-height: 55vh;
+		// min-height: 55vh;
 
 		.NicknameGeneratorItem {
 			display: none;
-			min-height: 55vh;
+			// min-height: 55vh;
 
 			&.NicknameGeneratorItemActive {
 				display: flex;
@@ -629,7 +647,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			text-align: left;
 			padding-left: 1.5rem;
 			margin-bottom: 1.5rem;
-			
+
 		}
 
 		.TMMNGItemAnswer [type=radio]+label {
@@ -650,7 +668,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				padding-left: 2.25rem;
 
 				&.TMMNGback {
-					>span {
+					&span {
 						cursor: pointer;
 					}
 				}
@@ -695,7 +713,7 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 		}
 
 		.NNGRUserInfo {
-			// padding-bottom: 1rem;
+			padding-bottom: 1rem;
 
 			h2,
 			h3 {
@@ -710,6 +728,9 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 			img {
 				height: 350px !important;
 
+				@media (max-width: ($NGWidth * .75)) {
+					height: 200px !important;
+				}
 			}
 		}
 
@@ -719,6 +740,10 @@ $NickGenOverlayImg2: "https://the-mob-museum.s3.amazonaws.com/share/nickname/v1/
 				line-height: 1.2;
 				font-size: 1.2em;
 				margin-bottom: .75em;
+
+				@media (max-width: ($NGWidth * 1.5)) {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}

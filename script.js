@@ -5,6 +5,7 @@
     // Download as image with https://html2canvas.hertzen.com/
     // https://html2canvas.hertzen.com/features/
 */
+const htmltoimage = document.querySelector('[role="htmltoimage"]')
 const questMainWrap = document.querySelector(".TMMNicknameGenerator")
 const questAction = questMainWrap.querySelectorAll('[role="questTheAction"]')
 const questTheQuestion = Array.from(questMainWrap.querySelectorAll('[role="questMobQuestion"]'))
@@ -19,6 +20,7 @@ const questResultsSubInfo = document.querySelector('[role="ResultsSubInfo"]')
 const questTMMNGFormWrap = document.querySelector('[role="TMMNGFormWrap"]')
 const fillfirstName = document.querySelector('[data-fill="firstName"]')
 const filllastName = document.querySelector('[data-fill="lastName"]')
+
 
 // Pad Leading Zero
 function padLeadingZeros(num, size) {
@@ -197,16 +199,19 @@ function nextQuestionHandler(e) {
     questTheQuestion.forEach((questPanel) => {
         questPanel.hidden = true
         questPanel.classList.remove("NicknameGeneratorItemActive")
-    });
+    })
     const buttonGTS = e.target.dataset.gts
     const currentTab = questTheQuestion.find(
         (questPanel) => questPanel.getAttribute("data-question") === buttonGTS
-    );
+    )
     currentTab.classList.add("NicknameGeneratorItemActive")
     currentTab.hidden = false
-    questPreviousQuestionRaw = buttonGTS - 01
+    questPreviousQuestionRaw = buttonGTS - 1
     questPreviousQuestion = padLeadingZeros(buttonGTS, 2)
     questBackBtn.setAttribute("data-gts", questPreviousQuestion)
+
+    htmltoimage.scrollIntoView({ behavior: "smooth", block: "start"});
+
     backButtonShowHide()
     buildTheDotsNG()
     SHButtonsAndGenerateNickname()
@@ -217,13 +222,13 @@ function previousQuestionHandler(e) {
         questPanel.hidden = true
         questPanel.classList.remove("NicknameGeneratorItemActive")
     });
-    const questPrevBackBtnGST = padLeadingZeros(questBackBtn.dataset.gts - 01, 2)
+    const questPrevBackBtnGST = padLeadingZeros(questBackBtn.dataset.gts - 1, 2)
     const currentTab = questTheQuestion.find(
         (questPanel) => questPanel.getAttribute("data-question") === questPrevBackBtnGST
     );
     currentTab.classList.add("NicknameGeneratorItemActive")
     currentTab.hidden = false
-    questPreviousQuestionRaw = questPrevBackBtnGST - 01
+    questPreviousQuestionRaw = questPrevBackBtnGST - 1
     questPreviousQuestion = padLeadingZeros(questPrevBackBtnGST, 2)
     questBackBtn.setAttribute("data-gts", questPreviousQuestion)
     backButtonShowHide()
